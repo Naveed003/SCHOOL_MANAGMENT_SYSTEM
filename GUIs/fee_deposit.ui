@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>fees_deposit</class>
+ <widget class="QMainWindow" name="fees_deposit">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>667</width>
+    <height>602</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(8, 8, 8);
+
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>30</y>
+      <width>331</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Comic Sans MS</family>
+      <pointsize>48</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">COLOR: WHITE;</string>
+    </property>
+    <property name="text">
+     <string>FEE DEPOSIT</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>110</y>
+      <width>291</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame{
+	border: 2px solid white;
+
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLineEdit" name="txtcheckroll">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>111</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Comic Sans MS</family>
+       <pointsize>16</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 0 8px;
+    background: white;
+    selection-background-color: darkgray;
+}</string>
+     </property>
+     <property name="placeholderText">
+      <string>ROLL NO</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_enter">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>60</y>
+       <width>113</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Comic Sans MS</family>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton { 
+	background-color: #33ff39;
+	border: 2px;
+	border-radius: 10px;
+					
+ }
+
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}</string>
+     </property>
+     <property name="text">
+      <string>ENTER</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="txtcheckname">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>20</y>
+       <width>113</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Comic Sans MS</family>
+       <pointsize>16</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 0 8px;
+    background: white;
+    selection-background-color: darkgray;
+}</string>
+     </property>
+     <property name="placeholderText">
+      <string>NAME</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QTableWidget" name="tblfees">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>250</y>
+      <width>611</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">COLOR: WHITE;</string>
+    </property>
+    <column>
+     <property name="text">
+      <string>ROLL NO</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>NAME</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>GRADE</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>TOTAL FEES</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>AMOUNT PAID</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>AMOUNT PENDING</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string/>
+     </property>
+    </column>
+   </widget>
+   <widget class="QFrame" name="frame_2">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>430</y>
+      <width>181</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame{
+	border: 2px solid white;
+
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLineEdit" name="txtroll">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>141</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Comic Sans MS</family>
+       <pointsize>13</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 0 8px;
+    background: white;
+    selection-background-color: darkgray;
+}</string>
+     </property>
+     <property name="placeholderText">
+      <string>ROLL NO</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_pay">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>100</y>
+       <width>113</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Comic Sans MS</family>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton { 
+	background-color: #33ff39;
+	border: 2px;
+	border-radius: 10px;
+					
+ }
+
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}</string>
+     </property>
+     <property name="text">
+      <string>PAY</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="txtfeesdepo">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>141</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Comic Sans MS</family>
+       <pointsize>13</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 0 8px;
+    background: white;
+    selection-background-color: darkgray;
+}</string>
+     </property>
+     <property name="placeholderText">
+      <string>FEES DEPOSITED</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="btn_return">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>480</y>
+      <width>161</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton { 
+	background-color: #33ff39;
+	border: 2px;
+	border-radius: 10px;
+					
+ }
+
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}</string>
+    </property>
+    <property name="text">
+     <string>RETURN</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_returnmain">
+    <property name="geometry">
+     <rect>
+      <x>452</x>
+      <y>530</y>
+      <width>161</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton { 
+	background-color: #33ff39;
+	border: 2px;
+	border-radius: 10px;
+					
+ }
+
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}</string>
+    </property>
+    <property name="text">
+     <string>RETURN TO MAIN MENU</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
