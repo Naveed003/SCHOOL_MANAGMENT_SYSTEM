@@ -15,6 +15,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(8, 8, 8);
+font-family: Times New Roman
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -29,7 +30,7 @@
     </property>
     <property name="font">
      <font>
-      <family>Comic Sans MS</family>
+      <family>Times New Roman</family>
       <pointsize>48</pointsize>
      </font>
     </property>
@@ -52,7 +53,7 @@
     </property>
     <property name="font">
      <font>
-      <family>Comic Sans MS</family>
+      <family>Times New Roman</family>
       <pointsize>18</pointsize>
      </font>
     </property>
@@ -83,7 +84,7 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
-      <family>Comic Sans MS</family>
+      <family>Times New Roman</family>
       <pointsize>18</pointsize>
      </font>
     </property>
@@ -114,7 +115,7 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
-      <family>Comic Sans MS</family>
+      <family>Times New Roman</family>
       <pointsize>18</pointsize>
      </font>
     </property>

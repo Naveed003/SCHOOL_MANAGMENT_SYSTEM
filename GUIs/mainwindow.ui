@@ -14,22 +14,26 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(8, 8, 8);</string>
+   <string notr="true">background-color: rgb(8, 8, 8);
+</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>110</x>
       <y>50</y>
-      <width>311</width>
+      <width>291</width>
       <height>61</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Comic Sans MS</family>
+      <family>Times New Roman</family>
       <pointsize>48</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
     </property>
     <property name="text">
@@ -47,8 +51,11 @@
     </property>
     <property name="font">
      <font>
-      <family>Comic Sans MS</family>
+      <family>Times New Roman</family>
       <pointsize>18</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
     </property>
     <property name="styleSheet">
@@ -78,8 +85,11 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
-      <family>Comic Sans MS</family>
+      <family>Times New Roman</family>
       <pointsize>18</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
     </property>
     <property name="styleSheet">
@@ -109,8 +119,11 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
-      <family>Comic Sans MS</family>
+      <family>Times New Roman</family>
       <pointsize>18</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
     </property>
     <property name="styleSheet">
@@ -140,8 +153,11 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
-      <family>Comic Sans MS</family>
+      <family>Times New Roman</family>
       <pointsize>18</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
     </property>
     <property name="styleSheet">
@@ -171,8 +187,11 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
-      <family>Comic Sans MS</family>
+      <family>Times New Roman</family>
       <pointsize>18</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
     </property>
     <property name="styleSheet">

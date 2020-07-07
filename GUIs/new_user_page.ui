@@ -28,7 +28,7 @@
     </property>
     <property name="font">
      <font>
-      <family>Comic Sans MS</family>
+      <family>Times New Roman</family>
       <pointsize>48</pointsize>
      </font>
     </property>
@@ -47,7 +47,7 @@
     </property>
     <property name="font">
      <font>
-      <family>Comic Sans MS</family>
+      <family>Times New Roman</family>
       <pointsize>24</pointsize>
      </font>
     </property>
@@ -78,7 +78,7 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
-      <family>Comic Sans MS</family>
+      <family>Times New Roman</family>
       <pointsize>14</pointsize>
      </font>
     </property>
@@ -109,7 +109,7 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
-      <family>Comic Sans MS</family>
+      <family>Times New Roman</family>
       <pointsize>14</pointsize>
      </font>
     </property>
@@ -137,7 +137,7 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
-      <family>Comic Sans MS</family>
+      <family>Times New Roman</family>
       <pointsize>14</pointsize>
      </font>
     </property>
@@ -165,7 +165,7 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
-      <family>Comic Sans MS</family>
+      <family>Times New Roman</family>
       <pointsize>14</pointsize>
      </font>
     </property>
