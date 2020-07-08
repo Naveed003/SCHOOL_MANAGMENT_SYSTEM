@@ -14,41 +14,12 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(8, 8, 8);</string>
+   <string notr="true">background-color: rgb(8, 8, 8);
+font-family: Times New Roman
+</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="btnShow">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>490</y>
-      <width>121</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Comic Sans MS</family>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton { 
-	background-color: #33ff39;
-	border: 2px;
-	border-radius: 8px;
-					
- }
-
-QPushButton:pressed {
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}</string>
-    </property>
-    <property name="text">
-     <string>SHOW STUDENT</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnModify">
+   <widget class="QToolButton" name="btnModify">
     <property name="geometry">
      <rect>
       <x>180</x>
@@ -59,19 +30,19 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
-      <family>Comic Sans MS</family>
+      <family>Times New Roman</family>
       <pointsize>12</pointsize>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">QPushButton { 
+     <string notr="true">QToolButton { 
 	background-color: #33ff39;
 	border: 2px;
 	border-radius: 8px;
 					
  }
 
-QPushButton:pressed {
+QToolButton:pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                       stop: 0 #dadbde, stop: 1 #f6f7fa);}</string>
     </property>
@@ -111,7 +82,7 @@ QPushButton:pressed {
      </property>
      <property name="font">
       <font>
-       <family>Comic Sans MS</family>
+       <family>Times New Roman</family>
        <pointsize>20</pointsize>
       </font>
      </property>
@@ -136,7 +107,7 @@ QPushButton:pressed {
      </property>
      <property name="font">
       <font>
-       <family>Comic Sans MS</family>
+       <family>Times New Roman</family>
        <pointsize>20</pointsize>
       </font>
      </property>
@@ -161,7 +132,7 @@ QPushButton:pressed {
      </property>
      <property name="font">
       <font>
-       <family>Comic Sans MS</family>
+       <family>Times New Roman</family>
        <pointsize>20</pointsize>
       </font>
      </property>
@@ -186,7 +157,7 @@ QPushButton:pressed {
      </property>
      <property name="font">
       <font>
-       <family>Comic Sans MS</family>
+       <family>Times New Roman</family>
        <pointsize>20</pointsize>
       </font>
      </property>
@@ -211,7 +182,7 @@ QPushButton:pressed {
      </property>
      <property name="font">
       <font>
-       <family>Comic Sans MS</family>
+       <family>Times New Roman</family>
        <pointsize>20</pointsize>
       </font>
      </property>
@@ -268,7 +239,7 @@ BACKGROUND: </string>
       </property>
       <property name="font">
        <font>
-        <family>Comic Sans MS</family>
+        <family>Times New Roman</family>
        </font>
       </property>
       <property name="styleSheet">
@@ -290,7 +261,7 @@ BACKGROUND: </string>
      </property>
      <property name="font">
       <font>
-       <family>Comic Sans MS</family>
+       <family>Times New Roman</family>
        <pointsize>20</pointsize>
       </font>
      </property>
@@ -331,7 +302,7 @@ BACKGROUND: </string>
      </property>
      <property name="font">
       <font>
-       <family>Comic Sans MS</family>
+       <family>Times New Roman</family>
        <pointsize>20</pointsize>
       </font>
      </property>
@@ -356,7 +327,7 @@ BACKGROUND: </string>
      </property>
      <property name="font">
       <font>
-       <family>Comic Sans MS</family>
+       <family>Times New Roman</family>
        <pointsize>20</pointsize>
       </font>
      </property>
@@ -381,7 +352,7 @@ BACKGROUND: </string>
      </property>
      <property name="font">
       <font>
-       <family>Comic Sans MS</family>
+       <family>Times New Roman</family>
       </font>
      </property>
      <property name="styleSheet">
@@ -408,7 +379,7 @@ BACKGROUND: </string>
      </property>
      <property name="font">
       <font>
-       <family>Comic Sans MS</family>
+       <family>Times New Roman</family>
       </font>
      </property>
      <property name="styleSheet">
@@ -435,7 +406,7 @@ BACKGROUND: </string>
      </property>
      <property name="font">
       <font>
-       <family>Comic Sans MS</family>
+       <family>Times New Roman</family>
       </font>
      </property>
      <property name="styleSheet">
@@ -462,7 +433,7 @@ BACKGROUND: </string>
      </property>
      <property name="font">
       <font>
-       <family>Comic Sans MS</family>
+       <family>Times New Roman</family>
       </font>
      </property>
      <property name="styleSheet">
@@ -489,7 +460,7 @@ BACKGROUND: </string>
      </property>
      <property name="font">
       <font>
-       <family>Comic Sans MS</family>
+       <family>Times New Roman</family>
       </font>
      </property>
      <property name="styleSheet">
@@ -636,7 +607,7 @@ BACKGROUND: </string>
      </item>
     </widget>
    </widget>
-   <widget class="QPushButton" name="btnshowall">
+   <widget class="QToolButton" name="btnshowall">
     <property name="geometry">
      <rect>
       <x>320</x>
@@ -647,19 +618,19 @@ BACKGROUND: </string>
     </property>
     <property name="font">
      <font>
-      <family>Comic Sans MS</family>
+      <family>Times New Roman</family>
       <pointsize>12</pointsize>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">QPushButton { 
+     <string notr="true">QToolButton { 
 	background-color: #33ff39;
 	border: 2px;
 	border-radius: 8px;
 					
  }
 
-QPushButton:pressed {
+QToolButton:pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                       stop: 0 #dadbde, stop: 1 #f6f7fa);}</string>
     </property>
@@ -678,7 +649,7 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
-      <family>Comic Sans MS</family>
+      <family>Times New Roman</family>
       <pointsize>18</pointsize>
      </font>
     </property>
@@ -696,7 +667,12 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">COLOR: WHITE</string>
+     <string notr="true">COLOR: WHITE;
+QTabWidget::tab-bar {
+    left: 5px; /* move to the right by 5px */
+}
+
+</string>
     </property>
     <column>
      <property name="text">
@@ -750,7 +726,7 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
-      <family>Comic Sans MS</family>
+      <family>Times New Roman</family>
       <pointsize>13</pointsize>
      </font>
     </property>
@@ -770,6 +746,44 @@ QPushButton:pressed {
      <string>RETURN</string>
     </property>
    </widget>
+   <widget class="QToolButton" name="btnShowStudent">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>490</y>
+      <width>121</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QToolButton { 
+	background-color: #33ff39;
+	border: 2px;
+	border-radius: 8px;
+					
+ }
+
+QToolButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}</string>
+    </property>
+    <property name="text">
+     <string>SHOW STUDENT</string>
+    </property>
+   </widget>
+   <zorder>frame</zorder>
+   <zorder>label_7</zorder>
+   <zorder>btnshowall</zorder>
+   <zorder>btnModify</zorder>
+   <zorder>studtable</zorder>
+   <zorder>btn_return</zorder>
+   <zorder>btnShowStudent</zorder>
   </widget>
  </widget>
  <resources/>

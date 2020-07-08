@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>667</width>
-    <height>602</height>
+    <height>447</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,7 +23,7 @@ font-family: Times New Roman
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>140</x>
+      <x>170</x>
       <y>30</y>
       <width>331</width>
       <height>51</height>
@@ -71,7 +71,7 @@ font-family: Times New Roman
       <rect>
        <x>20</x>
        <y>20</y>
-       <width>101</width>
+       <width>111</width>
        <height>21</height>
       </rect>
      </property>
@@ -100,17 +100,11 @@ font-family: Times New Roman
     <widget class="QToolButton" name="btn_enter">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>50</y>
-       <width>251</width>
+       <x>90</x>
+       <y>60</y>
+       <width>113</width>
        <height>21</height>
       </rect>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>80</width>
-       <height>0</height>
-      </size>
      </property>
      <property name="font">
       <font>
@@ -145,7 +139,7 @@ QToolButton:pressed {
       <rect>
        <x>160</x>
        <y>20</y>
-       <width>111</width>
+       <width>113</width>
        <height>21</height>
       </rect>
      </property>
@@ -171,33 +165,6 @@ QToolButton:pressed {
       <string>NAME</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_2">
-     <property name="geometry">
-      <rect>
-       <x>130</x>
-       <y>20</y>
-       <width>59</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>24</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: white;
-color:white</string>
-     </property>
-     <property name="text">
-      <string>or</string>
-     </property>
-    </widget>
-    <zorder>label_2</zorder>
-    <zorder>txtcheckroll</zorder>
-    <zorder>txtcheckname</zorder>
-    <zorder>btn_enter</zorder>
    </widget>
    <widget class="QTableWidget" name="tblfees">
     <property name="geometry">
@@ -210,39 +177,8 @@ color:white</string>
     </property>
     <property name="styleSheet">
      <string notr="true">COLOR: WHITE;
-BORDER: 1px solid white;
-font-family: Times New Roman</string>
+border: 1px solid white</string>
     </property>
-    <property name="frameShadow">
-     <enum>QFrame::Sunken</enum>
-    </property>
-    <property name="lineWidth">
-     <number>1</number>
-    </property>
-    <property name="midLineWidth">
-     <number>0</number>
-    </property>
-    <property name="horizontalScrollBarPolicy">
-     <enum>Qt::ScrollBarAsNeeded</enum>
-    </property>
-    <property name="sizeAdjustPolicy">
-     <enum>QAbstractScrollArea::AdjustToContents</enum>
-    </property>
-    <attribute name="horizontalHeaderVisible">
-     <bool>true</bool>
-    </attribute>
-    <attribute name="horizontalHeaderCascadingSectionResizes">
-     <bool>false</bool>
-    </attribute>
-    <attribute name="horizontalHeaderHighlightSections">
-     <bool>true</bool>
-    </attribute>
-    <attribute name="horizontalHeaderStretchLastSection">
-     <bool>false</bool>
-    </attribute>
-    <attribute name="verticalHeaderVisible">
-     <bool>true</bool>
-    </attribute>
     <column>
      <property name="text">
       <string>ROLL NO</string>
@@ -284,135 +220,11 @@ font-family: Times New Roman</string>
      </property>
     </column>
    </widget>
-   <widget class="QFrame" name="frame_2">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>430</y>
-      <width>181</width>
-      <height>151</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QFrame{
-	border: 2px solid white;
-
-}</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-    <widget class="QLineEdit" name="txtroll">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>20</y>
-       <width>141</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>13</pointsize>
-       <weight>50</weight>
-       <italic>false</italic>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QLineEdit {
-    border: 2px solid gray;
-    border-radius: 10px;
-    padding: 0 8px;
-    background: white;
-    selection-background-color: darkgray;
-}</string>
-     </property>
-     <property name="placeholderText">
-      <string>ROLL NO</string>
-     </property>
-    </widget>
-    <widget class="QToolButton" name="btn_pay">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>100</y>
-       <width>113</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>-1</pointsize>
-       <weight>50</weight>
-       <italic>false</italic>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QToolButton { 
-	background-color: #33ff39;
-	border: 2px;
-	border-radius: 8px;
-	FONT: 12PX;
-	COLOR: BLACK;
-
-					
- }
-
-QToolButton:pressed {
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}</string>
-     </property>
-     <property name="text">
-      <string>PAY</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="txtfeesdepo">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>60</y>
-       <width>141</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>13</pointsize>
-       <weight>50</weight>
-       <italic>false</italic>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QLineEdit {
-    border: 2px solid gray;
-    border-radius: 10px;
-    padding: 0 8px;
-    background: white;
-    selection-background-color: darkgray;
-}</string>
-     </property>
-     <property name="placeholderText">
-      <string>FEES DEPOSITED</string>
-     </property>
-    </widget>
-    <zorder>txtroll</zorder>
-    <zorder>txtfeesdepo</zorder>
-    <zorder>btn_pay</zorder>
-   </widget>
    <widget class="QToolButton" name="btn_return">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>480</y>
+      <x>390</x>
+      <y>110</y>
       <width>161</width>
       <height>32</height>
      </rect>
@@ -439,8 +251,8 @@ QToolButton:pressed {
    <widget class="QToolButton" name="btn_returnmain">
     <property name="geometry">
      <rect>
-      <x>452</x>
-      <y>530</y>
+      <x>390</x>
+      <y>160</y>
       <width>161</width>
       <height>32</height>
      </rect>

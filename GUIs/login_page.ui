@@ -15,6 +15,8 @@
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(8, 8, 8);
+font-family: Times New Roman
+
 
 </string>
   </property>
@@ -71,7 +73,7 @@
      <string/>
     </property>
     <property name="placeholderText">
-     <string>ENTER USERNAME</string>
+     <string>ENTER USERNAME/EMAIL ID</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="txtpass">
