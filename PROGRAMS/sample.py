@@ -79,6 +79,8 @@ class Ui_Login_page(object):
                         self.cleartxt()
                         return
 
+
+
     def setupUi(self, Login_page):
         Login_page.setObjectName("Login_page")
         Login_page.resize(447, 413)
