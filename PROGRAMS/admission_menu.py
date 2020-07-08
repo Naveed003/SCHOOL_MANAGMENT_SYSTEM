@@ -262,7 +262,10 @@ class Ui_Admission_Menu(object):
                                     "}")
         self.txtemail.setObjectName("txtemail")
         self.division = QtWidgets.QComboBox(self.frame)
-        self.division.setGeometry(QtCore.QRect(230, 190, 91, 41))
+        self.division.setGeometry(QtCore.QRect(240, 190, 81, 41))
+        self.division.setStyleSheet("border: 1px solid white;\n"
+                                    "color: white\n"
+                                    "")
         self.division.setObjectName("division")
         self.division.addItem("")
         self.division.addItem("")
@@ -274,6 +277,9 @@ class Ui_Admission_Menu(object):
         self.division.addItem("")
         self.grade = QtWidgets.QComboBox(self.frame)
         self.grade.setGeometry(QtCore.QRect(140, 189, 91, 41))
+        self.grade.setStyleSheet("border: 1px solid white;\n"
+                                 "color: white\n"
+                                 "")
         self.grade.setObjectName("grade")
         self.grade.addItem("")
         self.grade.addItem("")

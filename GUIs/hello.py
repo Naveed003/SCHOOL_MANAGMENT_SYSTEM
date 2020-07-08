@@ -18,8 +18,9 @@ files = [
 cmd = "pyuic5 -x "
 
 for i in files:
-    i=i.upper()
-    temp = cmd +"GUIs/"+ i + ".ui -o  PROGRAMS/" + i + ".py"
-    print(temp)
-    os.system(temp)
-    temp = ''
+    if i=="admission_menu":
+        i=i.upper()
+        temp = cmd +"GUIs/"+ i + ".ui -o  PROGRAMS/" + i + ".py"
+        print(temp)
+        os.system(temp)
+        temp = ''

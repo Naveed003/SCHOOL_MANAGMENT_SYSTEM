@@ -574,11 +574,16 @@ BACKGROUND: </string>
     <widget class="QComboBox" name="division">
      <property name="geometry">
       <rect>
-       <x>230</x>
+       <x>240</x>
        <y>190</y>
-       <width>91</width>
+       <width>81</width>
        <height>41</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1px solid white;
+color: white
+</string>
      </property>
      <item>
       <property name="text">
@@ -629,6 +634,11 @@ BACKGROUND: </string>
        <width>91</width>
        <height>41</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1px solid white;
+color: white
+</string>
      </property>
      <item>
       <property name="text">
