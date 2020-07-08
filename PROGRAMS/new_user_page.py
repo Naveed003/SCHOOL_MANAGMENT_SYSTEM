@@ -11,14 +11,14 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_sign_up(object):
-    def setupUi(self, sign_up):
-        sign_up.setObjectName("sign_up")
-        sign_up.resize(452, 462)
-        sign_up.setStyleSheet("background-color: rgb(8, 8, 8);\n"
+class Ui_Signup_Page(object):
+    def setupUi(self, Signup_Page):
+        Signup_Page.setObjectName("Signup_Page")
+        Signup_Page.resize(452, 462)
+        Signup_Page.setStyleSheet("background-color: rgb(8, 8, 8);\n"
 "font-family: Times New Roman\n"
 "")
-        self.centralwidget = QtWidgets.QWidget(sign_up)
+        self.centralwidget = QtWidgets.QWidget(Signup_Page)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(130, 30, 191, 71))
@@ -101,27 +101,27 @@ class Ui_sign_up(object):
 "    selection-background-color: darkgray;\n"
 "}")
         self.txtconfirmpass.setObjectName("txtconfirmpass")
-        sign_up.setCentralWidget(self.centralwidget)
+        Signup_Page.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(sign_up)
-        QtCore.QMetaObject.connectSlotsByName(sign_up)
+        self.retranslateUi(Signup_Page)
+        QtCore.QMetaObject.connectSlotsByName(Signup_Page)
 
-    def retranslateUi(self, sign_up):
+    def retranslateUi(self, Signup_Page):
         _translate = QtCore.QCoreApplication.translate
-        sign_up.setWindowTitle(_translate("sign_up", "MainWindow"))
-        self.label.setText(_translate("sign_up", "<html><head/><body><p><span style=\" color:#ffffff;\">SIGN-UP</span></p></body></html>"))
-        self.btn_signup.setText(_translate("sign_up", "SIGN-UP"))
-        self.txtemail.setPlaceholderText(_translate("sign_up", "ENTER EMAIL ID"))
-        self.txtusername.setPlaceholderText(_translate("sign_up", "ENTER USERNAME"))
-        self.txtpass.setPlaceholderText(_translate("sign_up", "ENTER PASSWORD"))
-        self.txtconfirmpass.setPlaceholderText(_translate("sign_up", "CONFIRM PASSWORD"))
+        Signup_Page.setWindowTitle(_translate("Signup_Page", "MainWindow"))
+        self.label.setText(_translate("Signup_Page", "<html><head/><body><p><span style=\" color:#ffffff;\">SIGN-UP</span></p></body></html>"))
+        self.btn_signup.setText(_translate("Signup_Page", "SIGN-UP"))
+        self.txtemail.setPlaceholderText(_translate("Signup_Page", "ENTER EMAIL ID"))
+        self.txtusername.setPlaceholderText(_translate("Signup_Page", "ENTER USERNAME"))
+        self.txtpass.setPlaceholderText(_translate("Signup_Page", "ENTER PASSWORD"))
+        self.txtconfirmpass.setPlaceholderText(_translate("Signup_Page", "CONFIRM PASSWORD"))
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    sign_up = QtWidgets.QMainWindow()
-    ui = Ui_sign_up()
-    ui.setupUi(sign_up)
-    sign_up.show()
+    Signup_Page = QtWidgets.QMainWindow()
+    ui = Ui_Signup_Page()
+    ui.setupUi(Signup_Page)
+    Signup_Page.show()
     sys.exit(app.exec_())

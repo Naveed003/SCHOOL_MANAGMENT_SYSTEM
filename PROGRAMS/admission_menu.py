@@ -11,15 +11,98 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_admission(object):
-    def setupUi(self, admission):
-        admission.setObjectName("admission")
-        admission.resize(988, 578)
-        admission.setStyleSheet("background-color: rgb(8, 8, 8);\n"
+class Ui_Admission_Menu(object):
+    def setupUi(self, Admission_Menu):
+        Admission_Menu.setObjectName("Admission_Menu")
+        Admission_Menu.resize(999, 578)
+        Admission_Menu.setStyleSheet("background-color: rgb(8, 8, 8);\n"
 "font-family: Times New Roman;\n"
 "")
-        self.frame = QtWidgets.QFrame(admission)
-        self.frame.setGeometry(QtCore.QRect(28, 180, 341, 331))
+        self.centralwidget = QtWidgets.QWidget(Admission_Menu)
+        self.centralwidget.setObjectName("centralwidget")
+        self.table_adm = QtWidgets.QTableWidget(self.centralwidget)
+        self.table_adm.setGeometry(QtCore.QRect(380, 160, 591, 331))
+        self.table_adm.setStyleSheet("COLOR: WHITE;\n"
+"border: 1px solid white;")
+        self.table_adm.setObjectName("table_adm")
+        self.table_adm.setColumnCount(6)
+        self.table_adm.setRowCount(0)
+        item = QtWidgets.QTableWidgetItem()
+        self.table_adm.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.table_adm.setHorizontalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.table_adm.setHorizontalHeaderItem(2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.table_adm.setHorizontalHeaderItem(3, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.table_adm.setHorizontalHeaderItem(4, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.table_adm.setHorizontalHeaderItem(5, item)
+        self.btnModify = QtWidgets.QToolButton(self.centralwidget)
+        self.btnModify.setGeometry(QtCore.QRect(271, 500, 91, 21))
+        font = QtGui.QFont()
+        font.setFamily("Times New Roman")
+        font.setPointSize(-1)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.btnModify.setFont(font)
+        self.btnModify.setStyleSheet("QToolButton { \n"
+"    background-color: #33ff39;\n"
+"    border: 2px;\n"
+"    border-radius: 8px;\n"
+"    FONT: 12PX;\n"
+"    COLOR: BLACK;\n"
+"\n"
+"                    \n"
+" }\n"
+"\n"
+"QToolButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}")
+        self.btnModify.setObjectName("btnModify")
+        self.btDelete = QtWidgets.QToolButton(self.centralwidget)
+        self.btDelete.setGeometry(QtCore.QRect(190, 500, 71, 21))
+        font = QtGui.QFont()
+        font.setFamily("Times New Roman")
+        font.setPointSize(-1)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.btDelete.setFont(font)
+        self.btDelete.setStyleSheet("QToolButton { \n"
+"    background-color: #33ff39;\n"
+"    border: 2px;\n"
+"    border-radius: 8px;\n"
+"    FONT: 12PX;\n"
+"    COLOR: BLACK;\n"
+"\n"
+"                    \n"
+" }\n"
+"\n"
+"QToolButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}")
+        self.btDelete.setObjectName("btDelete")
+        self.label_9 = QtWidgets.QLabel(self.centralwidget)
+        self.label_9.setGeometry(QtCore.QRect(60, 150, 161, 21))
+        font = QtGui.QFont()
+        font.setFamily("Times New Roman")
+        font.setPointSize(18)
+        self.label_9.setFont(font)
+        self.label_9.setStyleSheet("COLOR: WHITE;\n"
+"")
+        self.label_9.setObjectName("label_9")
+        self.label_7 = QtWidgets.QLabel(self.centralwidget)
+        self.label_7.setGeometry(QtCore.QRect(260, 20, 431, 91))
+        font = QtGui.QFont()
+        font.setFamily("Times New Roman")
+        font.setPointSize(18)
+        self.label_7.setFont(font)
+        self.label_7.setObjectName("label_7")
+        self.frame = QtWidgets.QFrame(self.centralwidget)
+        self.frame.setGeometry(QtCore.QRect(28, 160, 341, 331))
         self.frame.setStyleSheet("QFrame{\n"
 "    border: 2px solid white;\n"
 "\n"
@@ -215,51 +298,9 @@ class Ui_admission(object):
         self.grade.addItem("")
         self.grade.addItem("")
         self.grade.addItem("")
-        self.label_7 = QtWidgets.QLabel(admission)
-        self.label_7.setGeometry(QtCore.QRect(260, 40, 431, 91))
-        font = QtGui.QFont()
-        font.setFamily("Times New Roman")
-        font.setPointSize(18)
-        self.label_7.setFont(font)
-        self.label_7.setObjectName("label_7")
-        self.table_adm = QtWidgets.QTableWidget(admission)
-        self.table_adm.setGeometry(QtCore.QRect(380, 180, 591, 331))
-        self.table_adm.setStyleSheet("COLOR: WHITE;\n"
-"border: 1px solid white;")
-        self.table_adm.setObjectName("table_adm")
-        self.table_adm.setColumnCount(6)
-        self.table_adm.setRowCount(0)
-        item = QtWidgets.QTableWidgetItem()
-        self.table_adm.setHorizontalHeaderItem(0, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.table_adm.setHorizontalHeaderItem(1, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.table_adm.setHorizontalHeaderItem(2, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.table_adm.setHorizontalHeaderItem(3, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.table_adm.setHorizontalHeaderItem(4, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.table_adm.setHorizontalHeaderItem(5, item)
-        self.label_9 = QtWidgets.QLabel(admission)
-        self.label_9.setGeometry(QtCore.QRect(60, 170, 161, 21))
-        font = QtGui.QFont()
-        font.setFamily("Times New Roman")
-        font.setPointSize(18)
-        self.label_9.setFont(font)
-        self.label_9.setStyleSheet("COLOR: WHITE;\n"
-"")
-        self.label_9.setObjectName("label_9")
-        self.btDelete = QtWidgets.QToolButton(admission)
-        self.btDelete.setGeometry(QtCore.QRect(190, 520, 71, 21))
-        font = QtGui.QFont()
-        font.setFamily("Times New Roman")
-        font.setPointSize(-1)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setWeight(50)
-        self.btDelete.setFont(font)
-        self.btDelete.setStyleSheet("QToolButton { \n"
+        self.toolButton = QtWidgets.QToolButton(self.centralwidget)
+        self.toolButton.setGeometry(QtCore.QRect(910, 500, 61, 22))
+        self.toolButton.setStyleSheet("QToolButton { \n"
 "    background-color: #33ff39;\n"
 "    border: 2px;\n"
 "    border-radius: 8px;\n"
@@ -272,32 +313,9 @@ class Ui_admission(object):
 "QToolButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}")
-        self.btDelete.setObjectName("btDelete")
-        self.btnModify = QtWidgets.QToolButton(admission)
-        self.btnModify.setGeometry(QtCore.QRect(271, 520, 91, 21))
-        font = QtGui.QFont()
-        font.setFamily("Times New Roman")
-        font.setPointSize(-1)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setWeight(50)
-        self.btnModify.setFont(font)
-        self.btnModify.setStyleSheet("QToolButton { \n"
-"    background-color: #33ff39;\n"
-"    border: 2px;\n"
-"    border-radius: 8px;\n"
-"    FONT: 12PX;\n"
-"    COLOR: BLACK;\n"
-"\n"
-"                    \n"
-" }\n"
-"\n"
-"QToolButton:pressed {\n"
-"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}")
-        self.btnModify.setObjectName("btnModify")
-        self.btnAdd = QtWidgets.QToolButton(admission)
-        self.btnAdd.setGeometry(QtCore.QRect(110, 520, 71, 20))
+        self.toolButton.setObjectName("toolButton")
+        self.btnAdd = QtWidgets.QToolButton(self.centralwidget)
+        self.btnAdd.setGeometry(QtCore.QRect(110, 500, 71, 20))
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(-1)
@@ -319,8 +337,24 @@ class Ui_admission(object):
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}")
         self.btnAdd.setObjectName("btnAdd")
-        self.btnShow = QtWidgets.QToolButton(admission)
-        self.btnShow.setGeometry(QtCore.QRect(30, 520, 71, 21))
+        self.btnShowAll = QtWidgets.QToolButton(self.centralwidget)
+        self.btnShowAll.setGeometry(QtCore.QRect(820, 500, 71, 22))
+        self.btnShowAll.setStyleSheet("QToolButton { \n"
+"    background-color: #33ff39;\n"
+"    border: 2px;\n"
+"    border-radius: 8px;\n"
+"    FONT: 12PX;\n"
+"    COLOR: BLACK;\n"
+"\n"
+"                    \n"
+" }\n"
+"\n"
+"QToolButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}")
+        self.btnShowAll.setObjectName("btnShowAll")
+        self.btnShow = QtWidgets.QToolButton(self.centralwidget)
+        self.btnShow.setGeometry(QtCore.QRect(30, 500, 71, 21))
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(-1)
@@ -342,108 +376,87 @@ class Ui_admission(object):
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}")
         self.btnShow.setObjectName("btnShow")
-        self.toolButton = QtWidgets.QToolButton(admission)
-        self.toolButton.setGeometry(QtCore.QRect(910, 520, 61, 22))
-        self.toolButton.setStyleSheet("QToolButton { \n"
-"    background-color: #33ff39;\n"
-"    border: 2px;\n"
-"    border-radius: 8px;\n"
-"    FONT: 12PX;\n"
-"    COLOR: BLACK;\n"
-"\n"
-"                    \n"
-" }\n"
-"\n"
-"QToolButton:pressed {\n"
-"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}")
-        self.toolButton.setObjectName("toolButton")
-        self.btnShowAll = QtWidgets.QToolButton(admission)
-        self.btnShowAll.setGeometry(QtCore.QRect(820, 520, 71, 22))
-        self.btnShowAll.setStyleSheet("QToolButton { \n"
-"    background-color: #33ff39;\n"
-"    border: 2px;\n"
-"    border-radius: 8px;\n"
-"    FONT: 12PX;\n"
-"    COLOR: BLACK;\n"
-"\n"
-"                    \n"
-" }\n"
-"\n"
-"QToolButton:pressed {\n"
-"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}")
-        self.btnShowAll.setObjectName("btnShowAll")
+        self.table_adm.raise_()
+        self.btnModify.raise_()
+        self.btDelete.raise_()
+        self.label_7.raise_()
+        self.frame.raise_()
+        self.toolButton.raise_()
+        self.btnAdd.raise_()
+        self.btnShowAll.raise_()
+        self.btnShow.raise_()
+        self.label_9.raise_()
+        Admission_Menu.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(admission)
-        QtCore.QMetaObject.connectSlotsByName(admission)
+        self.retranslateUi(Admission_Menu)
+        QtCore.QMetaObject.connectSlotsByName(Admission_Menu)
 
-    def retranslateUi(self, admission):
+    def retranslateUi(self, Admission_Menu):
         _translate = QtCore.QCoreApplication.translate
-        admission.setWindowTitle(_translate("admission", "Form"))
-        self.label.setText(_translate("admission", "<html><head/><body><p><span style=\" color:#ffffff;\">ROLL NO:</span></p></body></html>"))
-        self.label_2.setText(_translate("admission", "<html><head/><body><p><span style=\" color:#ffffff;\">SEX: </span></p></body></html>"))
-        self.label_3.setText(_translate("admission", "<html><head/><body><p><span style=\" color:#ffffff;\">PHONE NO:</span></p></body></html>"))
-        self.label_4.setText(_translate("admission", "<html><head/><body><p><span style=\" color:#ffffff;\">NAME: </span></p></body></html>"))
-        self.label_5.setText(_translate("admission", "<html><head/><body><p><span style=\" color:#ffffff;\">CLASS :</span></p></body></html>"))
-        self.maleradio.setText(_translate("admission", "MALE"))
-        self.femaleradio.setText(_translate("admission", "FEMALE"))
-        self.label_6.setText(_translate("admission", "<html><head/><body><p><span style=\" color:#ffffff;\">AGE :</span></p></body></html>"))
-        self.label_8.setText(_translate("admission", "<html><head/><body><p><span style=\" color:#ffffff;\">EMAIL ID: </span></p></body></html>"))
-        self.txtrollno.setPlaceholderText(_translate("admission", "ROLL NO"))
-        self.txtname.setPlaceholderText(_translate("admission", "NAME"))
-        self.txtphone.setText(_translate("admission", "+971"))
-        self.txtphone.setPlaceholderText(_translate("admission", "PHONE NO"))
-        self.txtemail.setPlaceholderText(_translate("admission", "EMAIL ID"))
-        self.division.setItemText(0, _translate("admission", "A"))
-        self.division.setItemText(1, _translate("admission", "B"))
-        self.division.setItemText(2, _translate("admission", "C"))
-        self.division.setItemText(3, _translate("admission", "D"))
-        self.division.setItemText(4, _translate("admission", "E"))
-        self.division.setItemText(5, _translate("admission", "F"))
-        self.division.setItemText(6, _translate("admission", "G"))
-        self.division.setItemText(7, _translate("admission", "H"))
-        self.grade.setItemText(0, _translate("admission", "KG-1"))
-        self.grade.setItemText(1, _translate("admission", "KG-2"))
-        self.grade.setItemText(2, _translate("admission", "1"))
-        self.grade.setItemText(3, _translate("admission", "2"))
-        self.grade.setItemText(4, _translate("admission", "3"))
-        self.grade.setItemText(5, _translate("admission", "4"))
-        self.grade.setItemText(6, _translate("admission", "5"))
-        self.grade.setItemText(7, _translate("admission", "6"))
-        self.grade.setItemText(8, _translate("admission", "7"))
-        self.grade.setItemText(9, _translate("admission", "8"))
-        self.grade.setItemText(10, _translate("admission", "9"))
-        self.grade.setItemText(11, _translate("admission", "10"))
-        self.grade.setItemText(12, _translate("admission", "11"))
-        self.grade.setItemText(13, _translate("admission", "12"))
-        self.label_7.setText(_translate("admission", "<html><head/><body><p><span style=\" font-size:48pt; color:#ffffff;\">ADMISSION MENU</span></p></body></html>"))
+        Admission_Menu.setWindowTitle(_translate("Admission_Menu", "MainWindow"))
         item = self.table_adm.horizontalHeaderItem(0)
-        item.setText(_translate("admission", "ROLL NO"))
+        item.setText(_translate("Admission_Menu", "ROLL NO"))
         item = self.table_adm.horizontalHeaderItem(1)
-        item.setText(_translate("admission", "NAME"))
+        item.setText(_translate("Admission_Menu", "NAME"))
         item = self.table_adm.horizontalHeaderItem(2)
-        item.setText(_translate("admission", "AGE"))
+        item.setText(_translate("Admission_Menu", "AGE"))
         item = self.table_adm.horizontalHeaderItem(3)
-        item.setText(_translate("admission", "SEX"))
+        item.setText(_translate("Admission_Menu", "SEX"))
         item = self.table_adm.horizontalHeaderItem(4)
-        item.setText(_translate("admission", "CLASS"))
+        item.setText(_translate("Admission_Menu", "CLASS"))
         item = self.table_adm.horizontalHeaderItem(5)
-        item.setText(_translate("admission", "EMAIL ID"))
-        self.label_9.setText(_translate("admission", "STUDENT DETAILS"))
-        self.btDelete.setText(_translate("admission", "DELETE"))
-        self.btnModify.setText(_translate("admission", "MODIFY"))
-        self.btnAdd.setText(_translate("admission", "ADD"))
-        self.btnShow.setText(_translate("admission", "SHOW"))
-        self.toolButton.setText(_translate("admission", "RETURN"))
-        self.btnShowAll.setText(_translate("admission", "SHOW ALL"))
+        item.setText(_translate("Admission_Menu", "EMAIL ID"))
+        self.btnModify.setText(_translate("Admission_Menu", "MODIFY"))
+        self.btDelete.setText(_translate("Admission_Menu", "DELETE"))
+        self.label_9.setText(_translate("Admission_Menu", "STUDENT DETAILS"))
+        self.label_7.setText(_translate("Admission_Menu", "<html><head/><body><p><span style=\" font-size:48pt; color:#ffffff;\">ADMISSION MENU</span></p></body></html>"))
+        self.label.setText(_translate("Admission_Menu", "<html><head/><body><p><span style=\" color:#ffffff;\">ROLL NO:</span></p></body></html>"))
+        self.label_2.setText(_translate("Admission_Menu", "<html><head/><body><p><span style=\" color:#ffffff;\">SEX: </span></p></body></html>"))
+        self.label_3.setText(_translate("Admission_Menu", "<html><head/><body><p><span style=\" color:#ffffff;\">PHONE NO:</span></p></body></html>"))
+        self.label_4.setText(_translate("Admission_Menu", "<html><head/><body><p><span style=\" color:#ffffff;\">NAME: </span></p></body></html>"))
+        self.label_5.setText(_translate("Admission_Menu", "<html><head/><body><p><span style=\" color:#ffffff;\">CLASS :</span></p></body></html>"))
+        self.maleradio.setText(_translate("Admission_Menu", "MALE"))
+        self.femaleradio.setText(_translate("Admission_Menu", "FEMALE"))
+        self.label_6.setText(_translate("Admission_Menu", "<html><head/><body><p><span style=\" color:#ffffff;\">AGE :</span></p></body></html>"))
+        self.label_8.setText(_translate("Admission_Menu", "<html><head/><body><p><span style=\" color:#ffffff;\">EMAIL ID: </span></p></body></html>"))
+        self.txtrollno.setPlaceholderText(_translate("Admission_Menu", "ROLL NO"))
+        self.txtname.setPlaceholderText(_translate("Admission_Menu", "NAME"))
+        self.txtphone.setText(_translate("Admission_Menu", "+971"))
+        self.txtphone.setPlaceholderText(_translate("Admission_Menu", "PHONE NO"))
+        self.txtemail.setPlaceholderText(_translate("Admission_Menu", "EMAIL ID"))
+        self.division.setItemText(0, _translate("Admission_Menu", "A"))
+        self.division.setItemText(1, _translate("Admission_Menu", "B"))
+        self.division.setItemText(2, _translate("Admission_Menu", "C"))
+        self.division.setItemText(3, _translate("Admission_Menu", "D"))
+        self.division.setItemText(4, _translate("Admission_Menu", "E"))
+        self.division.setItemText(5, _translate("Admission_Menu", "F"))
+        self.division.setItemText(6, _translate("Admission_Menu", "G"))
+        self.division.setItemText(7, _translate("Admission_Menu", "H"))
+        self.grade.setItemText(0, _translate("Admission_Menu", "KG-1"))
+        self.grade.setItemText(1, _translate("Admission_Menu", "KG-2"))
+        self.grade.setItemText(2, _translate("Admission_Menu", "1"))
+        self.grade.setItemText(3, _translate("Admission_Menu", "2"))
+        self.grade.setItemText(4, _translate("Admission_Menu", "3"))
+        self.grade.setItemText(5, _translate("Admission_Menu", "4"))
+        self.grade.setItemText(6, _translate("Admission_Menu", "5"))
+        self.grade.setItemText(7, _translate("Admission_Menu", "6"))
+        self.grade.setItemText(8, _translate("Admission_Menu", "7"))
+        self.grade.setItemText(9, _translate("Admission_Menu", "8"))
+        self.grade.setItemText(10, _translate("Admission_Menu", "9"))
+        self.grade.setItemText(11, _translate("Admission_Menu", "10"))
+        self.grade.setItemText(12, _translate("Admission_Menu", "11"))
+        self.grade.setItemText(13, _translate("Admission_Menu", "12"))
+        self.toolButton.setText(_translate("Admission_Menu", "RETURN"))
+        self.btnAdd.setText(_translate("Admission_Menu", "ADD"))
+        self.btnShowAll.setText(_translate("Admission_Menu", "SHOW ALL"))
+        self.btnShow.setText(_translate("Admission_Menu", "SHOW"))
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    admission = QtWidgets.QWidget()
-    ui = Ui_admission()
-    ui.setupUi(admission)
-    admission.show()
+    Admission_Menu = QtWidgets.QMainWindow()
+    ui = Ui_Admission_Menu()
+    ui.setupUi(Admission_Menu)
+    Admission_Menu.show()
     sys.exit(app.exec_())

@@ -11,14 +11,14 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_fee_menu(object):
-    def setupUi(self, fee_menu):
-        fee_menu.setObjectName("fee_menu")
-        fee_menu.resize(506, 275)
-        fee_menu.setStyleSheet("background-color: rgb(8, 8, 8);\n"
+class Ui_Fee_Menu(object):
+    def setupUi(self, Fee_Menu):
+        Fee_Menu.setObjectName("Fee_Menu")
+        Fee_Menu.resize(506, 275)
+        Fee_Menu.setStyleSheet("background-color: rgb(8, 8, 8);\n"
 "font-family: Times New Roman\n"
 "")
-        self.centralwidget = QtWidgets.QWidget(fee_menu)
+        self.centralwidget = QtWidgets.QWidget(Fee_Menu)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(140, 20, 251, 61))
@@ -80,25 +80,25 @@ class Ui_fee_menu(object):
 "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}\n"
 "")
         self.btn_return.setObjectName("btn_return")
-        fee_menu.setCentralWidget(self.centralwidget)
+        Fee_Menu.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(fee_menu)
-        QtCore.QMetaObject.connectSlotsByName(fee_menu)
+        self.retranslateUi(Fee_Menu)
+        QtCore.QMetaObject.connectSlotsByName(Fee_Menu)
 
-    def retranslateUi(self, fee_menu):
+    def retranslateUi(self, Fee_Menu):
         _translate = QtCore.QCoreApplication.translate
-        fee_menu.setWindowTitle(_translate("fee_menu", "MainWindow"))
-        self.label.setText(_translate("fee_menu", "<html><head/><body><p>FEE MENU</p></body></html>"))
-        self.btn_fee_deposit.setText(_translate("fee_menu", "FEE DEPOSIT"))
-        self.btn_fees_details.setText(_translate("fee_menu", "FEE DETAILS"))
-        self.btn_return.setText(_translate("fee_menu", "RETURN"))
+        Fee_Menu.setWindowTitle(_translate("Fee_Menu", "MainWindow"))
+        self.label.setText(_translate("Fee_Menu", "<html><head/><body><p>FEE MENU</p></body></html>"))
+        self.btn_fee_deposit.setText(_translate("Fee_Menu", "FEE DEPOSIT"))
+        self.btn_fees_details.setText(_translate("Fee_Menu", "FEE DETAILS"))
+        self.btn_return.setText(_translate("Fee_Menu", "RETURN"))
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    fee_menu = QtWidgets.QMainWindow()
-    ui = Ui_fee_menu()
-    ui.setupUi(fee_menu)
-    fee_menu.show()
+    Fee_Menu = QtWidgets.QMainWindow()
+    ui = Ui_Fee_Menu()
+    ui.setupUi(Fee_Menu)
+    Fee_Menu.show()
     sys.exit(app.exec_())

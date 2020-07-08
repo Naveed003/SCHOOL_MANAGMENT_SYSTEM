@@ -9,12 +9,13 @@ files = [
     "student_data",
     "ADD_BOOK",
     "library_menu",
-    "fee_details"
+    "fee_details",
+    "DELETE_BOOK"
 ]
 cmd = "pyuic5 -x "
 
 for i in files:
-    temp = cmd +"GUIs/"+ i + ".ui -o " + i + ".py"
+    temp = cmd +"GUIs/"+ i + ".ui -o  PROGRAMS/" + i + ".py"
     print(temp)
     os.system(temp)
     temp = ''

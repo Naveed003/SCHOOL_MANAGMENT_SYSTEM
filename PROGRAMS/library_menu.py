@@ -11,15 +11,15 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_MAIN_MENU(object):
-    def setupUi(self, MAIN_MENU):
-        MAIN_MENU.setObjectName("MAIN_MENU")
-        MAIN_MENU.resize(513, 421)
-        MAIN_MENU.setStyleSheet("background-color: rgb(8, 8, 8);\n"
+class Ui_Library_Menu(object):
+    def setupUi(self, Library_Menu):
+        Library_Menu.setObjectName("Library_Menu")
+        Library_Menu.resize(513, 421)
+        Library_Menu.setStyleSheet("background-color: rgb(8, 8, 8);\n"
 "font-family: Times New Roman\n"
 "\n"
 "")
-        self.centralwidget = QtWidgets.QWidget(MAIN_MENU)
+        self.centralwidget = QtWidgets.QWidget(Library_Menu)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(50, 50, 361, 61))
@@ -190,30 +190,30 @@ class Ui_MAIN_MENU(object):
         self.label_3.setFont(font)
         self.label_3.setStyleSheet("COLOR: WHITE")
         self.label_3.setObjectName("label_3")
-        MAIN_MENU.setCentralWidget(self.centralwidget)
+        Library_Menu.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(MAIN_MENU)
-        QtCore.QMetaObject.connectSlotsByName(MAIN_MENU)
+        self.retranslateUi(Library_Menu)
+        QtCore.QMetaObject.connectSlotsByName(Library_Menu)
 
-    def retranslateUi(self, MAIN_MENU):
+    def retranslateUi(self, Library_Menu):
         _translate = QtCore.QCoreApplication.translate
-        MAIN_MENU.setWindowTitle(_translate("MAIN_MENU", "MainWindow"))
-        self.label.setText(_translate("MAIN_MENU", "<html><head/><body><p>LIBRARY MENU</p><p><br/></p></body></html>"))
-        self.btn_admission.setText(_translate("MAIN_MENU", "ADD BOOK"))
-        self.btn_fees_details.setText(_translate("MAIN_MENU", "DELETE BOOK"))
-        self.btn_student_data.setText(_translate("MAIN_MENU", "STATISTICS"))
-        self.label_2.setText(_translate("MAIN_MENU", "OPERATIONS"))
-        self.btn_library.setText(_translate("MAIN_MENU", "ISSUE BOOK"))
-        self.btn_exit.setText(_translate("MAIN_MENU", "RETURN BOOK"))
-        self.pushButton.setText(_translate("MAIN_MENU", "RETURN"))
-        self.label_3.setText(_translate("MAIN_MENU", "ACTION"))
+        Library_Menu.setWindowTitle(_translate("Library_Menu", "MainWindow"))
+        self.label.setText(_translate("Library_Menu", "<html><head/><body><p>LIBRARY MENU</p><p><br/></p></body></html>"))
+        self.btn_admission.setText(_translate("Library_Menu", "ADD BOOK"))
+        self.btn_fees_details.setText(_translate("Library_Menu", "DELETE BOOK"))
+        self.btn_student_data.setText(_translate("Library_Menu", "STATISTICS"))
+        self.label_2.setText(_translate("Library_Menu", "OPERATIONS"))
+        self.btn_library.setText(_translate("Library_Menu", "ISSUE BOOK"))
+        self.btn_exit.setText(_translate("Library_Menu", "RETURN BOOK"))
+        self.pushButton.setText(_translate("Library_Menu", "RETURN"))
+        self.label_3.setText(_translate("Library_Menu", "ACTION"))
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    MAIN_MENU = QtWidgets.QMainWindow()
-    ui = Ui_MAIN_MENU()
-    ui.setupUi(MAIN_MENU)
-    MAIN_MENU.show()
+    Library_Menu = QtWidgets.QMainWindow()
+    ui = Ui_Library_Menu()
+    ui.setupUi(Library_Menu)
+    Library_Menu.show()
     sys.exit(app.exec_())

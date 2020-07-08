@@ -11,16 +11,16 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_ADD_BOOK(object):
-    def setupUi(self, ADD_BOOK):
-        ADD_BOOK.setObjectName("ADD_BOOK")
-        ADD_BOOK.resize(252, 330)
-        ADD_BOOK.setStyleSheet("background-color: rgb(8, 8, 8);\n"
+class Ui_Add_Book(object):
+    def setupUi(self, Add_Book):
+        Add_Book.setObjectName("Add_Book")
+        Add_Book.resize(252, 330)
+        Add_Book.setStyleSheet("background-color: rgb(8, 8, 8);\n"
 "font-family: Times New Roman;\n"
 "COLOR: WHITE\n"
 "\n"
 "")
-        self.centralwidget = QtWidgets.QWidget(ADD_BOOK)
+        self.centralwidget = QtWidgets.QWidget(Add_Book)
         self.centralwidget.setObjectName("centralwidget")
         self.formFrame = QtWidgets.QFrame(self.centralwidget)
         self.formFrame.setGeometry(QtCore.QRect(10, 90, 231, 161))
@@ -156,29 +156,29 @@ class Ui_ADD_BOOK(object):
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}")
         self.btn_return.setObjectName("btn_return")
-        ADD_BOOK.setCentralWidget(self.centralwidget)
+        Add_Book.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(ADD_BOOK)
-        QtCore.QMetaObject.connectSlotsByName(ADD_BOOK)
+        self.retranslateUi(Add_Book)
+        QtCore.QMetaObject.connectSlotsByName(Add_Book)
 
-    def retranslateUi(self, ADD_BOOK):
+    def retranslateUi(self, Add_Book):
         _translate = QtCore.QCoreApplication.translate
-        ADD_BOOK.setWindowTitle(_translate("ADD_BOOK", "MainWindow"))
-        self.bookIdLabel.setText(_translate("ADD_BOOK", "BOOK ID: "))
-        self.nAMELabel.setText(_translate("ADD_BOOK", "NAME:"))
-        self.eDITIONLabel.setText(_translate("ADD_BOOK", "EDITION:"))
-        self.aUTHORLabel.setText(_translate("ADD_BOOK", "AUTHOR:"))
-        self.pUBLISHERLabel.setText(_translate("ADD_BOOK", "PUBLISHER:"))
-        self.label.setText(_translate("ADD_BOOK", "ADD BOOK"))
-        self.btn_add.setText(_translate("ADD_BOOK", "ADD"))
-        self.btn_return.setText(_translate("ADD_BOOK", "RETURN"))
+        Add_Book.setWindowTitle(_translate("Add_Book", "MainWindow"))
+        self.bookIdLabel.setText(_translate("Add_Book", "BOOK ID: "))
+        self.nAMELabel.setText(_translate("Add_Book", "NAME:"))
+        self.eDITIONLabel.setText(_translate("Add_Book", "EDITION:"))
+        self.aUTHORLabel.setText(_translate("Add_Book", "AUTHOR:"))
+        self.pUBLISHERLabel.setText(_translate("Add_Book", "PUBLISHER:"))
+        self.label.setText(_translate("Add_Book", "ADD BOOK"))
+        self.btn_add.setText(_translate("Add_Book", "ADD"))
+        self.btn_return.setText(_translate("Add_Book", "RETURN"))
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    ADD_BOOK = QtWidgets.QMainWindow()
-    ui = Ui_ADD_BOOK()
-    ui.setupUi(ADD_BOOK)
-    ADD_BOOK.show()
+    Add_Book = QtWidgets.QMainWindow()
+    ui = Ui_Add_Book()
+    ui.setupUi(Add_Book)
+    Add_Book.show()
     sys.exit(app.exec_())

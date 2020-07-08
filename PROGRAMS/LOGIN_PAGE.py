@@ -11,16 +11,16 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_login(object):
-    def setupUi(self, login):
-        login.setObjectName("login")
-        login.resize(447, 413)
-        login.setStyleSheet("background-color: rgb(8, 8, 8);\n"
+class Ui_Login_page(object):
+    def setupUi(self, Login_page):
+        Login_page.setObjectName("Login_page")
+        Login_page.resize(447, 413)
+        Login_page.setStyleSheet("background-color: rgb(8, 8, 8);\n"
 "font-family: Times New Roman\n"
 "\n"
 "\n"
 "")
-        self.centralwidget = QtWidgets.QWidget(login)
+        self.centralwidget = QtWidgets.QWidget(Login_page)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(140, 30, 171, 71))
@@ -111,26 +111,26 @@ class Ui_login(object):
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}")
         self.btn_new_user.setObjectName("btn_new_user")
-        login.setCentralWidget(self.centralwidget)
+        Login_page.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(login)
-        QtCore.QMetaObject.connectSlotsByName(login)
+        self.retranslateUi(Login_page)
+        QtCore.QMetaObject.connectSlotsByName(Login_page)
 
-    def retranslateUi(self, login):
+    def retranslateUi(self, Login_page):
         _translate = QtCore.QCoreApplication.translate
-        login.setWindowTitle(_translate("login", "MainWindow"))
-        self.label.setText(_translate("login", "<html><head/><body><p><span style=\" color:#ffffff;\">LOGIN</span></p></body></html>"))
-        self.txtusername.setPlaceholderText(_translate("login", "ENTER USERNAME/EMAIL ID"))
-        self.txtpass.setPlaceholderText(_translate("login", "ENTER PASSWORD"))
-        self.btn_login.setText(_translate("login", "LOGIN"))
-        self.btn_new_user.setText(_translate("login", "NEW-USER"))
+        Login_page.setWindowTitle(_translate("Login_page", "MainWindow"))
+        self.label.setText(_translate("Login_page", "<html><head/><body><p><span style=\" color:#ffffff;\">LOGIN</span></p></body></html>"))
+        self.txtusername.setPlaceholderText(_translate("Login_page", "ENTER USERNAME/EMAIL ID"))
+        self.txtpass.setPlaceholderText(_translate("Login_page", "ENTER PASSWORD"))
+        self.btn_login.setText(_translate("Login_page", "LOGIN"))
+        self.btn_new_user.setText(_translate("Login_page", "NEW-USER"))
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    login = QtWidgets.QMainWindow()
-    ui = Ui_login()
-    ui.setupUi(login)
-    login.show()
+    Login_page = QtWidgets.QMainWindow()
+    ui = Ui_Login_page()
+    ui.setupUi(Login_page)
+    Login_page.show()
     sys.exit(app.exec_())

@@ -11,15 +11,15 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_fees_deposit(object):
-    def setupUi(self, fees_deposit):
-        fees_deposit.setObjectName("fees_deposit")
-        fees_deposit.resize(667, 447)
-        fees_deposit.setStyleSheet("background-color: rgb(8, 8, 8);\n"
+class Ui_Fees_Details(object):
+    def setupUi(self, Fees_Details):
+        Fees_Details.setObjectName("Fees_Details")
+        Fees_Details.resize(667, 447)
+        Fees_Details.setStyleSheet("background-color: rgb(8, 8, 8);\n"
 "font-family: Times New Roman\n"
 "\n"
 "")
-        self.centralwidget = QtWidgets.QWidget(fees_deposit)
+        self.centralwidget = QtWidgets.QWidget(Fees_Details)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(170, 30, 331, 51))
@@ -154,39 +154,39 @@ class Ui_fees_deposit(object):
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}")
         self.btn_returnmain.setObjectName("btn_returnmain")
-        fees_deposit.setCentralWidget(self.centralwidget)
+        Fees_Details.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(fees_deposit)
-        QtCore.QMetaObject.connectSlotsByName(fees_deposit)
+        self.retranslateUi(Fees_Details)
+        QtCore.QMetaObject.connectSlotsByName(Fees_Details)
 
-    def retranslateUi(self, fees_deposit):
+    def retranslateUi(self, Fees_Details):
         _translate = QtCore.QCoreApplication.translate
-        fees_deposit.setWindowTitle(_translate("fees_deposit", "MainWindow"))
-        self.label.setText(_translate("fees_deposit", "FEE DEPOSIT"))
-        self.txtcheckroll.setPlaceholderText(_translate("fees_deposit", "ROLL NO"))
-        self.btn_enter.setText(_translate("fees_deposit", "ENTER"))
-        self.txtcheckname.setPlaceholderText(_translate("fees_deposit", "NAME"))
+        Fees_Details.setWindowTitle(_translate("Fees_Details", "MainWindow"))
+        self.label.setText(_translate("Fees_Details", "FEE DEPOSIT"))
+        self.txtcheckroll.setPlaceholderText(_translate("Fees_Details", "ROLL NO"))
+        self.btn_enter.setText(_translate("Fees_Details", "ENTER"))
+        self.txtcheckname.setPlaceholderText(_translate("Fees_Details", "NAME"))
         item = self.tblfees.horizontalHeaderItem(0)
-        item.setText(_translate("fees_deposit", "ROLL NO"))
+        item.setText(_translate("Fees_Details", "ROLL NO"))
         item = self.tblfees.horizontalHeaderItem(1)
-        item.setText(_translate("fees_deposit", "NAME"))
+        item.setText(_translate("Fees_Details", "NAME"))
         item = self.tblfees.horizontalHeaderItem(2)
-        item.setText(_translate("fees_deposit", "GRADE"))
+        item.setText(_translate("Fees_Details", "GRADE"))
         item = self.tblfees.horizontalHeaderItem(3)
-        item.setText(_translate("fees_deposit", "TOTAL FEES"))
+        item.setText(_translate("Fees_Details", "TOTAL FEES"))
         item = self.tblfees.horizontalHeaderItem(4)
-        item.setText(_translate("fees_deposit", "AMOUNT PAID"))
+        item.setText(_translate("Fees_Details", "AMOUNT PAID"))
         item = self.tblfees.horizontalHeaderItem(5)
-        item.setText(_translate("fees_deposit", "AMOUNT PENDING"))
-        self.btn_return.setText(_translate("fees_deposit", "RETURN"))
-        self.btn_returnmain.setText(_translate("fees_deposit", "RETURN TO MAIN MENU"))
+        item.setText(_translate("Fees_Details", "AMOUNT PENDING"))
+        self.btn_return.setText(_translate("Fees_Details", "RETURN"))
+        self.btn_returnmain.setText(_translate("Fees_Details", "RETURN TO MAIN MENU"))
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    fees_deposit = QtWidgets.QMainWindow()
-    ui = Ui_fees_deposit()
-    ui.setupUi(fees_deposit)
-    fees_deposit.show()
+    Fees_Details = QtWidgets.QMainWindow()
+    ui = Ui_Fees_Details()
+    ui.setupUi(Fees_Details)
+    Fees_Details.show()
     sys.exit(app.exec_())
