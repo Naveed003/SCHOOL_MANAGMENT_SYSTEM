@@ -1,9 +1,15 @@
-import mysql.connector
-from PyQt5 import QtCore, QtGui, QtWidgets
-import time
 
+from PyQt5 import QtCore, QtGui, QtWidgets
+import mysql.connector
 
 class Ui_Login_page(object):
+    def switchwin(self,win):
+        self.window=QtWidgets.QMainWindow()
+        self.ui=win()
+        self.ui.setupUi(self.window)
+        Login_page.hide()
+        self.window.show()
+
     def ShowMessageBox(self, title, message):
         msgbox = QtWidgets.QMessageBox()
         msgbox.setIcon(QtWidgets.QMessageBox.Information)
@@ -17,6 +23,7 @@ class Ui_Login_page(object):
         msgbox.setWindowTitle(title)
         msgbox.setText(message)
         msgbox.exec_()
+
     
     def cleartxt(self):
         self.txtusername.clear()
@@ -51,7 +58,7 @@ class Ui_Login_page(object):
                             list.append(j)
                     if checklist == list:
                         self.ShowMessageBox("SUCCESSFULL", "LOGIN SUCCESSFULL")
-                        
+                        self.switchwin(Ui_MAIN_MENU)
                     else:
                         self.ShowMessageBox_(
                             "LOGIN FAILED", "INCORRECT EMAIL ID OR PASSWORD")
@@ -74,6 +81,7 @@ class Ui_Login_page(object):
                             list.append(j)
                     if checklist == list:
                         self.ShowMessageBox("SUCCESSFULL", "LOGIN SUCCESSFULL")
+                        self.switchwin(Ui_MAIN_MENU)
                     else:
                         self.ShowMessageBox_(
                             "LOGIN FAILED", "INCORRECT USERNAME OR PASSWORD")
@@ -196,6 +204,144 @@ class Ui_Login_page(object):
             _translate("Login_page", "ENTER PASSWORD"))
         self.btn_login.setText(_translate("Login_page", "LOGIN"))
         self.btn_new_user.setText(_translate("Login_page", "NEW-USER"))
+
+
+class Ui_MAIN_MENU(object):
+    def setupUi(self, MAIN_MENU):
+        MAIN_MENU.setObjectName("MAIN_MENU")
+        MAIN_MENU.resize(512, 336)
+        MAIN_MENU.setStyleSheet("background-color: rgb(8, 8, 8);\n"
+                                "font-family: Times New Roman\n"
+                                "\n"
+                                "")
+        self.centralwidget = QtWidgets.QWidget(MAIN_MENU)
+        self.centralwidget.setObjectName("centralwidget")
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(110, 50, 291, 61))
+        font = QtGui.QFont()
+        font.setFamily("Times New Roman")
+        font.setPointSize(48)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.label.setFont(font)
+        self.label.setObjectName("label")
+        self.btn_admission = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_admission.setGeometry(QtCore.QRect(20, 150, 231, 41))
+        font = QtGui.QFont()
+        font.setFamily("Times New Roman")
+        font.setPointSize(18)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.btn_admission.setFont(font)
+        self.btn_admission.setStyleSheet("QPushButton { \n"
+                                         "    background-color: #33ff39;\n"
+                                         "    border: 2px;\n"
+                                         "    border-radius: 10px;\n"
+                                         "                    \n"
+                                         " }\n"
+                                         "QPushButton:pressed {\n"
+                                         "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+                                         "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}\n"
+                                         "")
+        self.btn_admission.setObjectName("btn_admission")
+        self.btn_student_data = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_student_data.setGeometry(QtCore.QRect(260, 210, 231, 41))
+        font = QtGui.QFont()
+        font.setFamily("Times New Roman")
+        font.setPointSize(18)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.btn_student_data.setFont(font)
+        self.btn_student_data.setStyleSheet("QPushButton { \n"
+                                            "    background-color: #33ff39;\n"
+                                            "    border: 2px;\n"
+                                            "    border-radius: 10px;\n"
+                                            "                    \n"
+                                            " }\n"
+                                            "QPushButton:pressed {\n"
+                                            "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+                                            "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}\n"
+                                            "")
+        self.btn_student_data.setObjectName("btn_student_data")
+        self.btn_library = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_library.setGeometry(QtCore.QRect(20, 210, 231, 41))
+        font = QtGui.QFont()
+        font.setFamily("Times New Roman")
+        font.setPointSize(18)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.btn_library.setFont(font)
+        self.btn_library.setStyleSheet("QPushButton { \n"
+                                       "    background-color: #33ff39;\n"
+                                       "    border: 2px;\n"
+                                       "    border-radius: 10px;\n"
+                                       "                    \n"
+                                       " }\n"
+                                       "QPushButton:pressed {\n"
+                                       "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+                                       "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}\n"
+                                       "")
+        self.btn_library.setObjectName("btn_library")
+        self.btn_fees_details = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_fees_details.setGeometry(QtCore.QRect(260, 150, 231, 41))
+        font = QtGui.QFont()
+        font.setFamily("Times New Roman")
+        font.setPointSize(18)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.btn_fees_details.setFont(font)
+        self.btn_fees_details.setStyleSheet("QPushButton { \n"
+                                            "    background-color: #33ff39;\n"
+                                            "    border: 2px;\n"
+                                            "    border-radius: 10px;\n"
+                                            "                    \n"
+                                            " }\n"
+                                            "QPushButton:pressed {\n"
+                                            "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+                                            "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}\n"
+                                            "")
+        self.btn_fees_details.setObjectName("btn_fees_details")
+        self.btn_exit = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_exit.setGeometry(QtCore.QRect(20, 270, 471, 41))
+        font = QtGui.QFont()
+        font.setFamily("Times New Roman")
+        font.setPointSize(18)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.btn_exit.setFont(font)
+        self.btn_exit.setStyleSheet("QPushButton { \n"
+                                    "    background-color: #33ff39;\n"
+                                    "    border: 2px;\n"
+                                    "    border-radius: 10px;\n"
+                                    "                    \n"
+                                    " }\n"
+                                    "QPushButton:pressed {\n"
+                                    "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+                                    "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}\n"
+                                    "")
+        self.btn_exit.setObjectName("btn_exit")
+        MAIN_MENU.setCentralWidget(self.centralwidget)
+
+        self.retranslateUi(MAIN_MENU)
+        QtCore.QMetaObject.connectSlotsByName(MAIN_MENU)
+
+    def retranslateUi(self, MAIN_MENU):
+        _translate = QtCore.QCoreApplication.translate
+        MAIN_MENU.setWindowTitle(_translate("MAIN_MENU", "MainWindow"))
+        self.label.setText(_translate(
+            "MAIN_MENU", "<html><head/><body><p><span style=\" color:#ffffff;\">MAIN MENU</span></p><p><span style=\" color:#ffffff;\"><br/></span></p></body></html>"))
+        self.btn_admission.setText(_translate(
+            "MAIN_MENU", "ADMISSION DETAILS"))
+        self.btn_student_data.setText(_translate("MAIN_MENU", "STUDENT DATA"))
+        self.btn_library.setText(_translate("MAIN_MENU", "LIBRARY"))
+        self.btn_fees_details.setText(_translate("MAIN_MENU", "FEES DETAILS"))
+        self.btn_exit.setText(_translate("MAIN_MENU", "EXIT"))
 
 
 if __name__ == "__main__":
