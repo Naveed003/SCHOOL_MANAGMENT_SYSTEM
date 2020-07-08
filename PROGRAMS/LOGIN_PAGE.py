@@ -1,8 +1,53 @@
-
+import mysql.connector
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class Ui_Login_page(object):
+    def ShowMessageBox(self,title,message):
+        msgbox = QtWidgets.QMessageBox()
+        msgbox.setIcon(QtWidgets.QMessageBox.Information)
+        msgbox.setWindowTitle(title)
+        msgbox.setText(message)
+        msgbox.exec_()
+    def ShowMessageBox_(self,title,message):
+        msgbox = QtWidgets.QMessageBox()
+        msgbox.setIcon(QtWidgets.QMessageBox.Warning)
+        msgbox.setWindowTitle(title)
+        msgbox.setText(message)
+        msgbox.exec_()
+
+    def login(self):
+        mydb=mysql.connector.connect(host='localhost', user='root',passwd='logon@123',database="school_management_system")
+        mycursor=mydb.cursor()
+        username=self.txtusername.text()
+        password=self.txtpass.text()
+        if username=="" and password =="":
+            self.ShowMessageBox_("FAILED","ENTER USERNAME/EMAIL ID AND PASSWORD")
+            return
+        else:
+            if "@" in username:
+                query="select email_id from users where email_id='{}'".format(username)
+                mycursor.execute(query)
+                res=mycursor.fetchall()
+                if res==[]:
+                    self.ShowMessageBox_("LOGIN FAILES","The username/email id you entered doesn't belong to an account. Please check your username and try again.")
+                else:
+                    count=[]
+                    for i in res:
+                        for j in i:
+                            count.append(j)
+                    print(count)
+                
+            else:
+                query="select username from users where username={}".format(username)
+                mycursor.execute(query)
+                res=mycursor.fetchall()
+       
+            
+                
+                   
+
+        
     def setupUi(self, Login_page):
         Login_page.setObjectName("Login_page")
         Login_page.resize(447, 413)
@@ -82,6 +127,7 @@ class Ui_Login_page(object):
                                      "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}\n"
                                      "")
         self.btn_login.setObjectName("btn_login")
+        self.btn_login.clicked.connect(self.login)
         self.btn_new_user = QtWidgets.QPushButton(self.centralwidget)
         self.btn_new_user.setGeometry(QtCore.QRect(110, 340, 231, 41))
         font = QtGui.QFont()
