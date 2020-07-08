@@ -10,7 +10,8 @@ files = [
     "ADD_BOOK",
     "library_menu",
     "fee_details",
-    "DELETE_BOOK"
+    "DELETE_BOOK",
+    "statistics"
 ]
 cmd = "pyuic5 -x "
 
