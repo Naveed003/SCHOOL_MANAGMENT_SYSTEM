@@ -87,7 +87,7 @@ COLOR: WHITE
      <string>DELETE BOOK</string>
     </property>
    </widget>
-   <widget class="QToolButton" name="btn_add">
+   <widget class="QToolButton" name="btn_delete">
     <property name="geometry">
      <rect>
       <x>60</x>

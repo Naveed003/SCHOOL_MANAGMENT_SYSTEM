@@ -103,7 +103,7 @@ class Ui_Fees_Details(object):
         self.tblfees.setStyleSheet("COLOR: WHITE;\n"
 "border: 1px solid white")
         self.tblfees.setObjectName("tblfees")
-        self.tblfees.setColumnCount(7)
+        self.tblfees.setColumnCount(6)
         self.tblfees.setRowCount(0)
         item = QtWidgets.QTableWidgetItem()
         self.tblfees.setHorizontalHeaderItem(0, item)
@@ -120,8 +120,6 @@ class Ui_Fees_Details(object):
         font.setPointSize(10)
         item.setFont(font)
         self.tblfees.setHorizontalHeaderItem(5, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tblfees.setHorizontalHeaderItem(6, item)
         self.btn_return = QtWidgets.QToolButton(self.centralwidget)
         self.btn_return.setGeometry(QtCore.QRect(390, 110, 161, 32))
         self.btn_return.setStyleSheet("QToolButton { \n"

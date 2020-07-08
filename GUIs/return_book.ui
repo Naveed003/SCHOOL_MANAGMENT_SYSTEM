@@ -109,19 +109,19 @@ COLOR: WHITE
     <property name="font">
      <font>
       <family>Times New Roman</family>
-      <pointsize>36</pointsize>
+      <pointsize>30</pointsize>
      </font>
     </property>
     <property name="text">
-     <string>ISSUE BOOK</string>
+     <string>RETURN BOOK</string>
     </property>
    </widget>
-   <widget class="QToolButton" name="btn_issue">
+   <widget class="QToolButton" name="btn_returnbook">
     <property name="geometry">
      <rect>
       <x>30</x>
       <y>200</y>
-      <width>61</width>
+      <width>101</width>
       <height>21</height>
      </rect>
     </property>
@@ -141,7 +141,7 @@ QToolButton:pressed {
                                       stop: 0 #dadbde, stop: 1 #f6f7fa);}</string>
     </property>
     <property name="text">
-     <string>ISSUE</string>
+     <string>RETURN BOOK</string>
     </property>
    </widget>
    <widget class="QToolButton" name="btn_return">

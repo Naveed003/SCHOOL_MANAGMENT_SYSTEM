@@ -42,16 +42,16 @@ class Ui_Library_Menu(object):
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
-        self.btn_admission = QtWidgets.QPushButton(self.frame)
-        self.btn_admission.setGeometry(QtCore.QRect(10, 30, 131, 41))
+        self.btn_add_book = QtWidgets.QPushButton(self.frame)
+        self.btn_add_book.setGeometry(QtCore.QRect(10, 30, 131, 41))
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(18)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
-        self.btn_admission.setFont(font)
-        self.btn_admission.setStyleSheet("QPushButton { \n"
+        self.btn_add_book.setFont(font)
+        self.btn_add_book.setStyleSheet("QPushButton { \n"
 "    background-color: #33ff39;\n"
 "    border: 2px;\n"
 "    border-radius: 10px;\n"
@@ -61,17 +61,17 @@ class Ui_Library_Menu(object):
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}\n"
 "")
-        self.btn_admission.setObjectName("btn_admission")
-        self.btn_fees_details = QtWidgets.QPushButton(self.frame)
-        self.btn_fees_details.setGeometry(QtCore.QRect(160, 30, 141, 41))
+        self.btn_add_book.setObjectName("btn_add_book")
+        self.btn_delete_book = QtWidgets.QPushButton(self.frame)
+        self.btn_delete_book.setGeometry(QtCore.QRect(160, 30, 141, 41))
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(18)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
-        self.btn_fees_details.setFont(font)
-        self.btn_fees_details.setStyleSheet("QPushButton { \n"
+        self.btn_delete_book.setFont(font)
+        self.btn_delete_book.setStyleSheet("QPushButton { \n"
 "    background-color: #33ff39;\n"
 "    border: 2px;\n"
 "    border-radius: 10px;\n"
@@ -81,17 +81,17 @@ class Ui_Library_Menu(object):
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}\n"
 "")
-        self.btn_fees_details.setObjectName("btn_fees_details")
-        self.btn_student_data = QtWidgets.QPushButton(self.frame)
-        self.btn_student_data.setGeometry(QtCore.QRect(320, 30, 131, 41))
+        self.btn_delete_book.setObjectName("btn_delete_book")
+        self.btn_statistics = QtWidgets.QPushButton(self.frame)
+        self.btn_statistics.setGeometry(QtCore.QRect(320, 30, 131, 41))
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(18)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
-        self.btn_student_data.setFont(font)
-        self.btn_student_data.setStyleSheet("QPushButton { \n"
+        self.btn_statistics.setFont(font)
+        self.btn_statistics.setStyleSheet("QPushButton { \n"
 "    background-color: #33ff39;\n"
 "    border: 2px;\n"
 "    border-radius: 10px;\n"
@@ -101,10 +101,10 @@ class Ui_Library_Menu(object):
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}\n"
 "")
-        self.btn_student_data.setObjectName("btn_student_data")
-        self.btn_admission.raise_()
-        self.btn_student_data.raise_()
-        self.btn_fees_details.raise_()
+        self.btn_statistics.setObjectName("btn_statistics")
+        self.btn_add_book.raise_()
+        self.btn_statistics.raise_()
+        self.btn_delete_book.raise_()
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(50, 130, 111, 21))
         font = QtGui.QFont()
@@ -122,16 +122,16 @@ class Ui_Library_Menu(object):
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_2.setObjectName("frame_2")
-        self.btn_library = QtWidgets.QPushButton(self.frame_2)
-        self.btn_library.setGeometry(QtCore.QRect(10, 30, 131, 41))
+        self.btn_issue_book = QtWidgets.QPushButton(self.frame_2)
+        self.btn_issue_book.setGeometry(QtCore.QRect(10, 30, 131, 41))
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(18)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
-        self.btn_library.setFont(font)
-        self.btn_library.setStyleSheet("QPushButton { \n"
+        self.btn_issue_book.setFont(font)
+        self.btn_issue_book.setStyleSheet("QPushButton { \n"
 "    background-color: #33ff39;\n"
 "    border: 2px;\n"
 "    border-radius: 10px;\n"
@@ -141,17 +141,17 @@ class Ui_Library_Menu(object):
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}\n"
 "")
-        self.btn_library.setObjectName("btn_library")
-        self.btn_exit = QtWidgets.QPushButton(self.frame_2)
-        self.btn_exit.setGeometry(QtCore.QRect(160, 30, 141, 41))
+        self.btn_issue_book.setObjectName("btn_issue_book")
+        self.btn_return_book = QtWidgets.QPushButton(self.frame_2)
+        self.btn_return_book.setGeometry(QtCore.QRect(160, 30, 141, 41))
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(18)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
-        self.btn_exit.setFont(font)
-        self.btn_exit.setStyleSheet("QPushButton { \n"
+        self.btn_return_book.setFont(font)
+        self.btn_return_book.setStyleSheet("QPushButton { \n"
 "    background-color: #33ff39;\n"
 "    border: 2px;\n"
 "    border-radius: 10px;\n"
@@ -161,14 +161,14 @@ class Ui_Library_Menu(object):
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}\n"
 "")
-        self.btn_exit.setObjectName("btn_exit")
-        self.pushButton = QtWidgets.QPushButton(self.frame_2)
-        self.pushButton.setGeometry(QtCore.QRect(322, 31, 121, 41))
+        self.btn_return_book.setObjectName("btn_return_book")
+        self.btn_return = QtWidgets.QPushButton(self.frame_2)
+        self.btn_return.setGeometry(QtCore.QRect(322, 31, 121, 41))
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(18)
-        self.pushButton.setFont(font)
-        self.pushButton.setStyleSheet("QPushButton { \n"
+        self.btn_return.setFont(font)
+        self.btn_return.setStyleSheet("QPushButton { \n"
 "    background-color: #33ff39;\n"
 "    border: 2px;\n"
 "    border-radius: 10px;\n"
@@ -178,10 +178,10 @@ class Ui_Library_Menu(object):
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}\n"
 "")
-        self.pushButton.setObjectName("pushButton")
-        self.pushButton.raise_()
-        self.btn_exit.raise_()
-        self.btn_library.raise_()
+        self.btn_return.setObjectName("btn_return")
+        self.btn_return.raise_()
+        self.btn_return_book.raise_()
+        self.btn_issue_book.raise_()
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
         self.label_3.setGeometry(QtCore.QRect(50, 260, 71, 21))
         font = QtGui.QFont()
@@ -199,13 +199,13 @@ class Ui_Library_Menu(object):
         _translate = QtCore.QCoreApplication.translate
         Library_Menu.setWindowTitle(_translate("Library_Menu", "MainWindow"))
         self.label.setText(_translate("Library_Menu", "<html><head/><body><p>LIBRARY MENU</p><p><br/></p></body></html>"))
-        self.btn_admission.setText(_translate("Library_Menu", "ADD BOOK"))
-        self.btn_fees_details.setText(_translate("Library_Menu", "DELETE BOOK"))
-        self.btn_student_data.setText(_translate("Library_Menu", "STATISTICS"))
+        self.btn_add_book.setText(_translate("Library_Menu", "ADD BOOK"))
+        self.btn_delete_book.setText(_translate("Library_Menu", "DELETE BOOK"))
+        self.btn_statistics.setText(_translate("Library_Menu", "STATISTICS"))
         self.label_2.setText(_translate("Library_Menu", "OPERATIONS"))
-        self.btn_library.setText(_translate("Library_Menu", "ISSUE BOOK"))
-        self.btn_exit.setText(_translate("Library_Menu", "RETURN BOOK"))
-        self.pushButton.setText(_translate("Library_Menu", "RETURN"))
+        self.btn_issue_book.setText(_translate("Library_Menu", "ISSUE BOOK"))
+        self.btn_return_book.setText(_translate("Library_Menu", "RETURN BOOK"))
+        self.btn_return.setText(_translate("Library_Menu", "RETURN"))
         self.label_3.setText(_translate("Library_Menu", "ACTION"))
 
 

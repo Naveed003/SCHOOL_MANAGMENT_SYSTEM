@@ -21,7 +21,7 @@ class Ui_Admission_Menu(object):
         self.centralwidget = QtWidgets.QWidget(Admission_Menu)
         self.centralwidget.setObjectName("centralwidget")
         self.table_adm = QtWidgets.QTableWidget(self.centralwidget)
-        self.table_adm.setGeometry(QtCore.QRect(380, 160, 591, 331))
+        self.table_adm.setGeometry(QtCore.QRect(380, 160, 611, 331))
         self.table_adm.setStyleSheet("COLOR: WHITE;\n"
 "border: 1px solid white;")
         self.table_adm.setObjectName("table_adm")
@@ -298,9 +298,9 @@ class Ui_Admission_Menu(object):
         self.grade.addItem("")
         self.grade.addItem("")
         self.grade.addItem("")
-        self.toolButton = QtWidgets.QToolButton(self.centralwidget)
-        self.toolButton.setGeometry(QtCore.QRect(910, 500, 61, 22))
-        self.toolButton.setStyleSheet("QToolButton { \n"
+        self.btn_return = QtWidgets.QToolButton(self.centralwidget)
+        self.btn_return.setGeometry(QtCore.QRect(910, 500, 61, 22))
+        self.btn_return.setStyleSheet("QToolButton { \n"
 "    background-color: #33ff39;\n"
 "    border: 2px;\n"
 "    border-radius: 8px;\n"
@@ -313,7 +313,7 @@ class Ui_Admission_Menu(object):
 "QToolButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}")
-        self.toolButton.setObjectName("toolButton")
+        self.btn_return.setObjectName("btn_return")
         self.btnAdd = QtWidgets.QToolButton(self.centralwidget)
         self.btnAdd.setGeometry(QtCore.QRect(110, 500, 71, 20))
         font = QtGui.QFont()
@@ -381,7 +381,7 @@ class Ui_Admission_Menu(object):
         self.btDelete.raise_()
         self.label_7.raise_()
         self.frame.raise_()
-        self.toolButton.raise_()
+        self.btn_return.raise_()
         self.btnAdd.raise_()
         self.btnShowAll.raise_()
         self.btnShow.raise_()
@@ -446,7 +446,7 @@ class Ui_Admission_Menu(object):
         self.grade.setItemText(11, _translate("Admission_Menu", "10"))
         self.grade.setItemText(12, _translate("Admission_Menu", "11"))
         self.grade.setItemText(13, _translate("Admission_Menu", "12"))
-        self.toolButton.setText(_translate("Admission_Menu", "RETURN"))
+        self.btn_return.setText(_translate("Admission_Menu", "RETURN"))
         self.btnAdd.setText(_translate("Admission_Menu", "ADD"))
         self.btnShowAll.setText(_translate("Admission_Menu", "SHOW ALL"))
         self.btnShow.setText(_translate("Admission_Menu", "SHOW"))

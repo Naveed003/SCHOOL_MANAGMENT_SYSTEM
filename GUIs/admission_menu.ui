@@ -24,7 +24,7 @@ font-family: Times New Roman;
      <rect>
       <x>380</x>
       <y>160</y>
-      <width>591</width>
+      <width>611</width>
       <height>331</height>
      </rect>
     </property>
@@ -702,7 +702,7 @@ BACKGROUND: </string>
      </item>
     </widget>
    </widget>
-   <widget class="QToolButton" name="toolButton">
+   <widget class="QToolButton" name="btn_return">
     <property name="geometry">
      <rect>
       <x>910</x>
@@ -837,7 +837,7 @@ QToolButton:pressed {
    <zorder>btDelete</zorder>
    <zorder>label_7</zorder>
    <zorder>frame</zorder>
-   <zorder>toolButton</zorder>
+   <zorder>btn_return</zorder>
    <zorder>btnAdd</zorder>
    <zorder>btnShowAll</zorder>
    <zorder>btnShow</zorder>

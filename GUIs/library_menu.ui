@@ -67,7 +67,7 @@ font-family: Times New Roman
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QPushButton" name="btn_admission">
+    <widget class="QPushButton" name="btn_add_book">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -101,7 +101,7 @@ QPushButton:pressed {
       <string>ADD BOOK</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="btn_fees_details">
+    <widget class="QPushButton" name="btn_delete_book">
      <property name="geometry">
       <rect>
        <x>160</x>
@@ -135,7 +135,7 @@ QPushButton:pressed {
       <string>DELETE BOOK</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="btn_student_data">
+    <widget class="QPushButton" name="btn_statistics">
      <property name="geometry">
       <rect>
        <x>320</x>
@@ -169,9 +169,9 @@ QPushButton:pressed {
       <string>STATISTICS</string>
      </property>
     </widget>
-    <zorder>btn_admission</zorder>
-    <zorder>btn_student_data</zorder>
-    <zorder>btn_fees_details</zorder>
+    <zorder>btn_add_book</zorder>
+    <zorder>btn_statistics</zorder>
+    <zorder>btn_delete_book</zorder>
    </widget>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
@@ -216,7 +216,7 @@ QPushButton:pressed {
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QPushButton" name="btn_library">
+    <widget class="QPushButton" name="btn_issue_book">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -250,7 +250,7 @@ QPushButton:pressed {
       <string>ISSUE BOOK</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="btn_exit">
+    <widget class="QPushButton" name="btn_return_book">
      <property name="geometry">
       <rect>
        <x>160</x>
@@ -284,7 +284,7 @@ QPushButton:pressed {
       <string>RETURN BOOK</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="btn_return">
      <property name="geometry">
       <rect>
        <x>322</x>
@@ -315,9 +315,9 @@ QPushButton:pressed {
       <string>RETURN</string>
      </property>
     </widget>
-    <zorder>pushButton</zorder>
-    <zorder>btn_exit</zorder>
-    <zorder>btn_library</zorder>
+    <zorder>btn_return</zorder>
+    <zorder>btn_return_book</zorder>
+    <zorder>btn_issue_book</zorder>
    </widget>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
