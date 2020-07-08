@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'GUIs/return_book.ui'
+# Form implementation generated from reading ui file 'GUIs/RETURN_BOOK.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.0
 #

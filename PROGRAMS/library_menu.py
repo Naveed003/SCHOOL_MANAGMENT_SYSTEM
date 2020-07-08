@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'GUIs/library_menu.ui'
+# Form implementation generated from reading ui file 'GUIs/LIBRARY_MENU.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.0
 #

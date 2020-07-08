@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'GUIs/issue_book.ui'
+# Form implementation generated from reading ui file 'GUIs/ISSUE_BOOK.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.0
 #

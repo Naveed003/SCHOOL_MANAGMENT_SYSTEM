@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'GUIs/fee_deposit.ui'
+# Form implementation generated from reading ui file 'GUIs/FEE_DEPOSIT.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.0
 #
