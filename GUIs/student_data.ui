@@ -418,6 +418,9 @@ BACKGROUND: </string>
     selection-background-color: darkgray;
 }</string>
      </property>
+     <property name="text">
+      <string>+971</string>
+     </property>
      <property name="placeholderText">
       <string>PHONE NUMBER</string>
      </property>
