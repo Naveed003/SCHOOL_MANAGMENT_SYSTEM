@@ -13,12 +13,13 @@ files = [
     "DELETE_BOOK",
     "statistics",
     "issue_book",
-    "return_book"
+    "return_book",
+    "ABOUT"
 ]
 cmd = "pyuic5 -x "
 
 for i in files:
-    if i=="student_data":
+    if i!="LOGIN_PAGE":
         i=i.upper()
         temp = cmd +"GUIs/"+ i + ".ui -o  PROGRAMS/" + i + ".py"
         print(temp)

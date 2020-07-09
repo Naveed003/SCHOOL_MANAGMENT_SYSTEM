@@ -282,11 +282,7 @@ class Ui_Student_Data(object):
         self.studtable = QtWidgets.QTableWidget(self.centralwidget)
         self.studtable.setGeometry(QtCore.QRect(420, 120, 791, 351))
         self.studtable.setStyleSheet("COLOR: WHITE;\n"
-"QTabWidget::tab-bar {\n"
-"    left: 5px; /* move to the right by 5px */\n"
-"}\n"
-"\n"
-"")
+"border: 1px solid white;")
         self.studtable.setObjectName("studtable")
         self.studtable.setColumnCount(8)
         self.studtable.setRowCount(0)
@@ -340,6 +336,15 @@ class Ui_Student_Data(object):
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}")
         self.btnShowStudent.setObjectName("btnShowStudent")
+        self.label_10 = QtWidgets.QLabel(self.centralwidget)
+        self.label_10.setGeometry(QtCore.QRect(80, 110, 161, 21))
+        font = QtGui.QFont()
+        font.setFamily("Times New Roman")
+        font.setPointSize(18)
+        self.label_10.setFont(font)
+        self.label_10.setStyleSheet("COLOR: WHITE;\n"
+"")
+        self.label_10.setObjectName("label_10")
         self.frame.raise_()
         self.label_7.raise_()
         self.btnshowall.raise_()
@@ -347,6 +352,7 @@ class Ui_Student_Data(object):
         self.studtable.raise_()
         self.btn_return.raise_()
         self.btnShowStudent.raise_()
+        self.label_10.raise_()
         Student_Data.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(Student_Data)
@@ -414,6 +420,7 @@ class Ui_Student_Data(object):
         item.setText(_translate("Student_Data", "EMAIL ID"))
         self.btn_return.setText(_translate("Student_Data", "RETURN"))
         self.btnShowStudent.setText(_translate("Student_Data", "SHOW STUDENT"))
+        self.label_10.setText(_translate("Student_Data", "STUDENT DETAILS"))
 
 
 if __name__ == "__main__":

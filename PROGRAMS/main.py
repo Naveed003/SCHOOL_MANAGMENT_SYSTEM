@@ -4,6 +4,7 @@ import mysql.connector
 
 class Ui_Login_page(object):
     def switchwin(self,win):
+        self.mydb.close()
         self.window=QtWidgets.QMainWindow()
         self.ui=win()
         self.ui.setupUi(self.window)
@@ -30,9 +31,9 @@ class Ui_Login_page(object):
         self.txtpass.clear()
 
     def login(self):
-        mydb = mysql.connector.connect(
+        self.mydb = mysql.connector.connect(
             host='localhost', user='root', passwd='logon@123', database="school_management_system")
-        mycursor = mydb.cursor()
+        self.mycursor = self.mydb.cursor()
         temp_username = self.txtusername.text()
         temp_password = self.txtpass.text()
         checklist = [temp_username.lower(), temp_password]
@@ -44,8 +45,8 @@ class Ui_Login_page(object):
             if "@" in temp_username:
                 email_query = "select email_id,password from users where email_id='{}'".format(
                     temp_username)
-                mycursor.execute(email_query)
-                email_id = mycursor.fetchall()
+                self.mycursor.execute(email_query)
+                email_id = self.mycursor.fetchall()
                 if email_id == []:
                     self.ShowMessageBox_(
                         "LOGIN FAILEd", "The email id you entered doesn't belong to an account. Please check your email id and try again.".upper())
@@ -68,8 +69,8 @@ class Ui_Login_page(object):
             else:
                 query = "select username,password from users where username='{}'".format(
                     temp_username)
-                mycursor.execute(query)
-                username = mycursor.fetchall()
+                self.mycursor.execute(query)
+                username = self.mycursor.fetchall()
                 if username==[]:
                     self.ShowMessageBox_("LOGIN FAILED","The USERNAME you entered doesn't belong to an account. Please check your username and try again.".upper())
                     self.cleartxt()
@@ -217,7 +218,7 @@ class Ui_MAIN_MENU(object):
         self.centralwidget = QtWidgets.QWidget(MAIN_MENU)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(110, 50, 291, 61))
+        self.label.setGeometry(QtCore.QRect(120, 40, 291, 61))
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(48)
@@ -230,7 +231,7 @@ class Ui_MAIN_MENU(object):
         self.btn_admission.setGeometry(QtCore.QRect(20, 150, 231, 41))
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
-        font.setPointSize(18)
+        font.setPointSize(17)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
@@ -307,7 +308,7 @@ class Ui_MAIN_MENU(object):
                                             "")
         self.btn_fees_details.setObjectName("btn_fees_details")
         self.btn_exit = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_exit.setGeometry(QtCore.QRect(20, 270, 471, 41))
+        self.btn_exit.setGeometry(QtCore.QRect(20, 270, 231, 41))
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(18)
@@ -326,6 +327,23 @@ class Ui_MAIN_MENU(object):
                                     "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}\n"
                                     "")
         self.btn_exit.setObjectName("btn_exit")
+        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton.setGeometry(QtCore.QRect(260, 270, 231, 41))
+        font = QtGui.QFont()
+        font.setFamily("Times New Roman")
+        font.setPointSize(18)
+        self.pushButton.setFont(font)
+        self.pushButton.setStyleSheet("QPushButton { \n"
+                                      "    background-color: #33ff39;\n"
+                                      "    border: 2px;\n"
+                                      "    border-radius: 10px;\n"
+                                      "                    \n"
+                                      " }\n"
+                                      "QPushButton:pressed {\n"
+                                      "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+                                      "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}\n"
+                                      "")
+        self.pushButton.setObjectName("pushButton")
         MAIN_MENU.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MAIN_MENU)
@@ -342,6 +360,8 @@ class Ui_MAIN_MENU(object):
         self.btn_library.setText(_translate("MAIN_MENU", "LIBRARY"))
         self.btn_fees_details.setText(_translate("MAIN_MENU", "FEES DETAILS"))
         self.btn_exit.setText(_translate("MAIN_MENU", "EXIT"))
+        self.pushButton.setText(_translate("MAIN_MENU", "ABOUT"))
+
 
 
 if __name__ == "__main__":

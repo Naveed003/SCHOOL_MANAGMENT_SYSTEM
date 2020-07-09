@@ -70,7 +70,7 @@ font-family: Times New Roman
      </property>
      <property name="styleSheet">
       <string notr="true">COLOR: WHITE;
-BORDER: black;</string>
+border: 1px solid white;</string>
      </property>
      <column>
       <property name="text">

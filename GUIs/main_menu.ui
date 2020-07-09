@@ -23,8 +23,8 @@ font-family: Times New Roman
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>50</y>
+      <x>120</x>
+      <y>40</y>
       <width>291</width>
       <height>61</height>
      </rect>
@@ -54,7 +54,7 @@ font-family: Times New Roman
     <property name="font">
      <font>
       <family>Times New Roman</family>
-      <pointsize>18</pointsize>
+      <pointsize>17</pointsize>
       <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
@@ -183,7 +183,7 @@ QPushButton:pressed {
      <rect>
       <x>20</x>
       <y>270</y>
-      <width>471</width>
+      <width>231</width>
       <height>41</height>
      </rect>
     </property>
@@ -210,6 +210,37 @@ QPushButton:pressed {
     </property>
     <property name="text">
      <string>EXIT</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>270</y>
+      <width>231</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton { 
+	background-color: #33ff39;
+	border: 2px;
+	border-radius: 10px;
+					
+ }
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}
+</string>
+    </property>
+    <property name="text">
+     <string>ABOUT</string>
     </property>
    </widget>
   </widget>

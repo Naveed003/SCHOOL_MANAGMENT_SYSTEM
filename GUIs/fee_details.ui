@@ -25,7 +25,7 @@ font-family: Times New Roman
      <rect>
       <x>170</x>
       <y>30</y>
-      <width>331</width>
+      <width>301</width>
       <height>51</height>
      </rect>
     </property>
@@ -42,7 +42,7 @@ font-family: Times New Roman
      <string notr="true">COLOR: WHITE;</string>
     </property>
     <property name="text">
-     <string>FEE DEPOSIT</string>
+     <string>FEE DETAILS</string>
     </property>
    </widget>
    <widget class="QFrame" name="frame">
