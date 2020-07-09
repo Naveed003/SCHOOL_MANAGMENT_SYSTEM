@@ -5,6 +5,7 @@ import time
 
 class Ui_Login_page(object):
     def ShowMessageBox(self, title, message):
+        self.mydb.close()
         msgbox = QtWidgets.QMessageBox()
         msgbox.setIcon(QtWidgets.QMessageBox.Information)
         msgbox.setWindowTitle(title)
@@ -23,9 +24,9 @@ class Ui_Login_page(object):
         self.txtpass.clear()
 
     def login(self):
-        mydb = mysql.connector.connect(
+        self.mydb = mysql.connector.connect(
             host='localhost', user='root', passwd='logon@123', database="school_management_system")
-        mycursor = mydb.cursor()
+        self.mycursor = self.mydb.cursor()
         temp_username = self.txtusername.text()
         temp_password = self.txtpass.text()
         checklist = [temp_username.lower(), temp_password]
@@ -37,8 +38,8 @@ class Ui_Login_page(object):
             if "@" in temp_username:
                 email_query = "select email_id,password from users where email_id='{}'".format(
                     temp_username)
-                mycursor.execute(email_query)
-                email_id = mycursor.fetchall()
+                self.mycursor.execute(email_query)
+                email_id = self.mycursor.fetchall()
                 if email_id == []:
                     self.ShowMessageBox_(
                         "LOGIN FAILEd", "The email id you entered doesn't belong to an account. Please check your email id and try again.".upper())
@@ -61,8 +62,8 @@ class Ui_Login_page(object):
             else:
                 query = "select username,password from users where username='{}'".format(
                     temp_username)
-                mycursor.execute(query)
-                username = mycursor.fetchall()
+                self.mycursor.execute(query)
+                username = self.mycursor.fetchall()
                 if username==[]:
                     self.ShowMessageBox_("LOGIN FAILED","The USERNAME you entered doesn't belong to an account. Please check your username and try again.".upper())
                     self.cleartxt()
