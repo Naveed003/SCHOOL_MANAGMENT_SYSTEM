@@ -8,8 +8,9 @@ class Ui_Login_page(object):
         self.window=QtWidgets.QMainWindow()
         self.ui=win()
         self.ui.setupUi(self.window)
-        window.hide()
+        main.hide()
         self.window.show()
+  
 
     def ShowMessageBox(self, title, message):
         msgbox = QtWidgets.QMessageBox()
@@ -190,7 +191,6 @@ class Ui_Login_page(object):
                                         "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
                                         "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}")
         self.btn_new_user.setObjectName("btn_new_user")
-        self.btn_new_user.clicked.connect(lambda: self.switchwin(Ui_Signup_Page))
         Login_page.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(Login_page)
@@ -212,9 +212,9 @@ class Ui_Signup_Page(object):
     def switchwin(self,win):
         self.mydb.close()
         self.window=QtWidgets.QMainWindow()
-        self.window.hide()
         self.ui=win()
         self.ui.setupUi(self.window)
+        new_user.hide()
         self.window.show()
 
     def ShowMessageBox(self, title, message):
@@ -460,6 +460,7 @@ class Ui_MAIN_MENU(object):
                                          "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}\n"
                                          "")
         self.btn_admission.setObjectName("btn_admission")
+        self.btn_admission.clicked.connect(lambda: self.switchwin(Ui_Login_page))
         self.btn_student_data = QtWidgets.QPushButton(self.centralwidget)
         self.btn_student_data.setGeometry(QtCore.QRect(260, 210, 231, 41))
         font = QtGui.QFont()
@@ -576,10 +577,32 @@ class Ui_MAIN_MENU(object):
         self.pushButton.setText(_translate("MAIN_MENU", "ABOUT"))
 
 
+class login(QtWidgets.QMainWindow, Ui_Login_page):
+    def __init__(self, parent=None):
+        QtWidgets.QMainWindow.__init__(self, parent)
+        self.setupUi(self)
+        
 
+class new_user(QtWidgets.QMainWindow, Ui_Signup_Page):
+    def __init__(self, parent=None):
+        QtWidgets.QMainWindow.__init__(self, parent)
+        self.setupUi(self)
+
+class Main_menu(QtWidgets.QMainWindow, Ui_MAIN_MENU):
+    def __init__(self, parent=None):
+        QtWidgets.QMainWindow.__init__(self, parent)
+        self.setupUi(self)
+
+
+def changeWindow(w1,w2):
+    w1.hide()
+    s2.show()
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
+    main = login()
+    new_user = new_user()
+    main_menu=Main_menu()
     window = QtWidgets.QMainWindow()
     ui = Ui_Login_page()
     ui.setupUi(window)

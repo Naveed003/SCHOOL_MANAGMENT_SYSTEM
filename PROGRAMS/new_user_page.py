@@ -1,9 +1,86 @@
-
-
 from PyQt5 import QtCore, QtGui, QtWidgets
+import mysql.connector
 
 
 class Ui_Signup_Page(object):
+    def ShowMessageBox(self, title, message):
+        self.mydb.close()
+        msgbox = QtWidgets.QMessageBox()
+        msgbox.setIcon(QtWidgets.QMessageBox.Information)
+        msgbox.setWindowTitle(title)
+        msgbox.setText(message)
+        msgbox.exec_()
+
+    def ShowMessageBox_(self, title, message):
+        msgbox = QtWidgets.QMessageBox()
+        msgbox.setIcon(QtWidgets.QMessageBox.Warning)
+        msgbox.setWindowTitle(title)
+        msgbox.setText(message)
+        msgbox.exec_()
+    
+    def cleartxt(self):
+        self.txtemail.clear()
+        self.txtusername.clear()
+        self.txtpass.clear()
+        self.txtconfirmpass
+    
+    def new_user(self):
+        self.email=self.txtemail.text().lower()
+        self.username=str(self.txtusername.text().lower())
+        self.password=self.txtpass.text()
+        self.confpass=self.txtconfirmpass.text()
+        self.mydb=mysql.connector.connect(host="localhost",user="root",password="logon@123",database="school_management_system")
+        self.mycursor=self.mydb.cursor()
+        self.mycursor.execute("select * from users")
+        res=self.mycursor.fetchall()
+        emailids=[]
+        usernames=[]
+        passwords=[]
+        for i in res:
+            emailids.append(i[0].lower())
+            usernames.append(i[1])
+            passwords.append(i[2])
+        if self.username=="" or self.email =="" or self.password=="" or self.confpass=="" :
+            self.ShowMessageBox_("FAILED","ENTER ALL FIELDS")
+        else:
+            if self.username not in usernames and self.email not in emailids and self.password==self.confpass and "@" in self.email and self.username!=self.email and len(self.username)<=10 and self.username.isnumeric()==False and len(str(self.password))<=20 and len(str(self.password))>=8: 
+                ins_query="insert into users values('{}','{}','{}')".format(self.email,self.username,self.password)
+                self.mycursor.execute(ins_query)
+                self.mydb.commit()
+                self.ShowMessageBox("SUCCESSFULL","ACCOUNT CREATED")
+            else:
+                if self.email in emailids:
+                    message="ANOTHER ACCOUNT IS USING {}".format(self.email)
+                    self.ShowMessageBox_("FAILED",message)
+                    self.txtemail.clear()
+                elif self.username in usernames:
+                    message="ANOTHER ACCOUNT IS USING {}".format(self.username)
+                    self.ShowMessageBox_("FAILED",message)
+                elif "@" not in self.email:
+                    self.ShowMessageBox_("FAILED","ENTER A VALID EMAIL ADDRESS")
+                    self.txtemail.clear()
+                elif self.username==self.email:
+                    self.ShowMessageBox_("FAILED","USERNAME SHOULD NOT BE SAME AS EMAIL ID")
+                    self.txtusername.clear()
+                elif len(self.username)>10 or len(str(self.username))>4:
+                    self.ShowMessageBox_("FAILED","USERNAME TOO LONG OR TOO SHORT MAXIMUM 10 CHARACTERS AND MINIMUM 4 CHARACHTERS")
+                    self.txtusername.clear()
+                elif self.username.isnumeric()==True:
+                    self.ShowMessageBox_("FAILED","USERNAME SHOULD CONTAIN ATLEAST 1 ALPHABET")
+                    self.txtusername.clear()
+                elif self.password!=self.confpass:
+                    self.ShowMessageBox_("FAILED","PASSWORDS DONT'T MATCH")
+                    self.txtpass.clear()
+                    self.txtconfirmpass.clear()
+                elif len(str(self.password))>20:
+                    self.ShowMessageBox_("FAILED","PASSWORD TOO LONG. MAXIMUM 20 CHARACTER")
+                    self.txtpass.clear()
+                    self.txtconfirmpass.clear()
+                elif len(str(self.password))<8:
+                    self.ShowMessageBox_("FAILED","PASSWORD TOO SHORT. MINIMUM 8 CHARACTERS") 
+                    self.txtpass.clear()
+                    self.txtconfirmpass.clear()
+
     def setupUi(self, Signup_Page):
         Signup_Page.setObjectName("Signup_Page")
         Signup_Page.resize(452, 462)
@@ -36,6 +113,7 @@ class Ui_Signup_Page(object):
                                       "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
                                       "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}")
         self.btn_signup.setObjectName("btn_signup")
+        self.btn_signup.clicked.connect(self.new_user)
         self.txtemail = QtWidgets.QLineEdit(self.centralwidget)
         self.txtemail.setGeometry(QtCore.QRect(110, 130, 231, 41))
         font = QtGui.QFont()
@@ -78,6 +156,7 @@ class Ui_Signup_Page(object):
                                    "    background: white;\n"
                                    "    selection-background-color: darkgray;\n"
                                    "}")
+        self.txtpass.setEchoMode(QtWidgets.QLineEdit.Password)
         self.txtpass.setObjectName("txtpass")
         self.txtconfirmpass = QtWidgets.QLineEdit(self.centralwidget)
         self.txtconfirmpass.setGeometry(QtCore.QRect(112, 310, 231, 41))
@@ -92,6 +171,7 @@ class Ui_Signup_Page(object):
                                           "    background: white;\n"
                                           "    selection-background-color: darkgray;\n"
                                           "}")
+        self.txtconfirmpass.setEchoMode(QtWidgets.QLineEdit.Password)
         self.txtconfirmpass.setObjectName("txtconfirmpass")
         Signup_Page.setCentralWidget(self.centralwidget)
 
