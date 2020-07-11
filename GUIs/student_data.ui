@@ -284,6 +284,10 @@ BACKGROUND: </string>
        <height>22</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">color: white;
+</string>
+     </property>
      <property name="minimum">
       <number>3</number>
      </property>

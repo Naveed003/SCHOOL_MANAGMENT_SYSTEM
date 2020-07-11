@@ -428,6 +428,9 @@ BACKGROUND: </string>
        <family>Times New Roman</family>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">color: white;</string>
+     </property>
      <property name="minimum">
       <number>3</number>
      </property>
