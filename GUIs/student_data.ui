@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1236</width>
-    <height>568</height>
+    <width>1341</width>
+    <height>580</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -679,7 +679,7 @@ QToolButton:pressed {
      <rect>
       <x>420</x>
       <y>120</y>
-      <width>791</width>
+      <width>911</width>
       <height>351</height>
      </rect>
     </property>
@@ -719,12 +719,17 @@ border: 1px solid white;</string>
     </column>
     <column>
      <property name="text">
+      <string>EMAIL ID</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
       <string>DOB</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>EMAIL ID</string>
+      <string>DOJ</string>
      </property>
     </column>
    </widget>

@@ -9,84 +9,10 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from datetime import date
-import mysql.connector
 
 
 class Ui_Admission_Menu(object):
-    def male(self):
-        self.sex = "M"
-
-    def female(self):
-        self.sex = "F"
-
-    def vals(self):
-        self.roll = self.txtrollno.text()
-        self.name = self.txtname.text()
-        self.phone = self.txtphone.text()
-        self.gra = self.grade.currentText()
-        self.divis = self.division.currentText()
-        self.age = self.age_val.value()
-        self.doj = date.today()
-        self.email = self.txtemail.text()
-        self.values = [self.roll, self.name, self.phone, self.sex,
-                       self.gra, self.divis, self.age, self.email, self.doj]
-
-    def fetchingcolumns(self):
-        self.mycursor.execute("show columns from students")
-        res = self.mycursor.fetchall()
-        self.columns = []
-        for i in res:
-            self.columns.append(i[0])
-
-    def show(self):
-        self.vals()
-        for i in range(len(self.values)):
-            if i==4:
-                if self.values[i] != "" and self.values[i+1] != "":
-                    self.searchval = [self.values[i],self.values[i+1]]
-                    break
-            if self.values[i] != "" and self.values[i] != "+971":
-                self.searchval = [self.values[i]]
-                break
-            
-
-        self.fetchingcolumns()
-        print(self.searchval)
-        if len(self.searchval) == 1:
-            self.column = self.columns[i]
-            self.searchval = self.searchval[0]
-            query = "select ROLL_NO,NAME,AGE,SEX,GRADE,DIVISION,EMAIL_ID from students where {}='{}'".format(
-                self.column, self.searchval)
-
-        else:
-            self.column = self.columns[4]
-            self.column1 = self.columns[5]
-            query = "select ROLL_NO,NAME,AGE,SEX,GRADE,DIVISION,EMAIL_ID from students where {}='{}' and {}='{}'".format(
-                self.column, self.searchval[0], self.column1, self.searchval[1])
-        self.mycursor.execute(query)
-        res=self.mycursor.fetchall()
-        response=[]
-        for i in res:
-            for j in i:
-                response.append(j)
-
-      
-        for j in range(len(res)):
-            for i in range(0,len(response)):   
-                rowPosition = self.table_adm.rowCount()
-                self.table_adm.insertRow(rowPosition)
-                numcols = self.table_adm.columnCount()
-                numrows = self.table_adm.rowCount()  
-                self.table_adm.setRowCount(numrows)
-                self.table_adm.setColumnCount(numcols)           
-                self.table_adm.setItem(j, i, QtWidgets.QTableWidgetItem(response[i]))
-
     def setupUi(self, Admission_Menu):
-        self.sex = ""
-        self.mydb = mysql.connector.connect(
-            host="localhost", user="root", password="logon@123", database="school_management_system")
-        self.mycursor = self.mydb.cursor()
         Admission_Menu.setObjectName("Admission_Menu")
         Admission_Menu.resize(999, 578)
         Admission_Menu.setStyleSheet("background-color: rgb(8, 8, 8);\n"
@@ -136,7 +62,6 @@ class Ui_Admission_Menu(object):
                                      "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
                                      "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}")
         self.btnModify.setObjectName("btnModify")
-        self.btnModify.clicked.connect(self.vals)
         self.btDelete = QtWidgets.QToolButton(self.centralwidget)
         self.btDelete.setGeometry(QtCore.QRect(190, 500, 71, 21))
         font = QtGui.QFont()
@@ -256,7 +181,6 @@ class Ui_Admission_Menu(object):
         self.maleradio.setStyleSheet("color: white;\n"
                                      "BACKGROUND: ")
         self.maleradio.setObjectName("maleradio")
-        self.maleradio.toggled.connect(self.male)
         self.femaleradio = QtWidgets.QRadioButton(self.frame_2)
         self.femaleradio.setGeometry(QtCore.QRect(90, 10, 81, 20))
         font = QtGui.QFont()
@@ -264,7 +188,6 @@ class Ui_Admission_Menu(object):
         self.femaleradio.setFont(font)
         self.femaleradio.setStyleSheet("color: white;")
         self.femaleradio.setObjectName("femaleradio")
-        self.femaleradio.toggled.connect(self.female)
         self.label_6 = QtWidgets.QLabel(self.frame)
         self.label_6.setGeometry(QtCore.QRect(20, 230, 61, 31))
         font = QtGui.QFont()
@@ -464,7 +387,6 @@ class Ui_Admission_Menu(object):
                                    "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
                                    "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}")
         self.btnShow.setObjectName("btnShow")
-        self.btnShow.clicked.connect(self.show)
         self.table_adm.raise_()
         self.btnModify.raise_()
         self.btDelete.raise_()
@@ -483,7 +405,7 @@ class Ui_Admission_Menu(object):
     def retranslateUi(self, Admission_Menu):
         _translate = QtCore.QCoreApplication.translate
         Admission_Menu.setWindowTitle(
-            _translate("Admission_Menu", "ADMISSION MENU"))
+            _translate("Admission_Menu", "MainWindow"))
         item = self.table_adm.horizontalHeaderItem(0)
         item.setText(_translate("Admission_Menu", "ROLL NO"))
         item = self.table_adm.horizontalHeaderItem(1)
