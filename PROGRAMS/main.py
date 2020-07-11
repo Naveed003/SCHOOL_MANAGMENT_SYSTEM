@@ -8,8 +8,9 @@ class Ui_Login_page(object):
         self.window=QtWidgets.QMainWindow()
         self.ui=win()
         self.ui.setupUi(self.window)
-        window.hide()
+        Login_page.hide()
         self.window.show()
+        
 
     def ShowMessageBox(self, title, message):
         msgbox = QtWidgets.QMessageBox()
@@ -198,7 +199,7 @@ class Ui_Login_page(object):
 
     def retranslateUi(self, Login_page):
         _translate = QtCore.QCoreApplication.translate
-        Login_page.setWindowTitle(_translate("Login_page", "MainWindow"))
+        Login_page.setWindowTitle(_translate("Login_page", "LOGIN PAGE"))
         self.label.setText(_translate(
             "Login_page", "<html><head/><body><p><span style=\" color:#ffffff;\">LOGIN</span></p></body></html>"))
         self.txtusername.setPlaceholderText(
@@ -216,6 +217,8 @@ class Ui_Signup_Page(object):
         self.ui=win()
         self.ui.setupUi(self.window)
         self.window.show()
+        
+        
 
     def ShowMessageBox(self, title, message):
         self.mydb.close()
@@ -400,7 +403,7 @@ class Ui_Signup_Page(object):
 
     def retranslateUi(self, Signup_Page):
         _translate = QtCore.QCoreApplication.translate
-        Signup_Page.setWindowTitle(_translate("Signup_Page", "MainWindow"))
+        Signup_Page.setWindowTitle(_translate("Signup_Page", "SIGN UP"))
         self.label.setText(_translate(
             "Signup_Page", "<html><head/><body><p><span style=\" color:#ffffff;\">SIGN-UP</span></p></body></html>"))
         self.btn_signup.setText(_translate("Signup_Page", "SIGN-UP"))
@@ -564,7 +567,7 @@ class Ui_MAIN_MENU(object):
 
     def retranslateUi(self, MAIN_MENU):
         _translate = QtCore.QCoreApplication.translate
-        MAIN_MENU.setWindowTitle(_translate("MAIN_MENU", "MainWindow"))
+        MAIN_MENU.setWindowTitle(_translate("MAIN_MENU", "MAIN MENU"))
         self.label.setText(_translate(
             "MAIN_MENU", "<html><head/><body><p><span style=\" color:#ffffff;\">MAIN MENU</span></p><p><span style=\" color:#ffffff;\"><br/></span></p></body></html>"))
         self.btn_admission.setText(_translate(
@@ -580,8 +583,8 @@ class Ui_MAIN_MENU(object):
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    window = QtWidgets.QMainWindow()
-    ui = Ui_Login_page()
-    ui.setupUi(window)
-    window.show()
+    Login_page = QtWidgets.QMainWindow()
+    login_ui = Ui_Login_page()
+    login_ui.setupUi(Login_page)
+    Login_page.show()
     sys.exit(app.exec_())
