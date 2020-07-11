@@ -9,11 +9,41 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from datetime import date
+import mysql.connector
 
 
 class Ui_Admission_Menu(object):
+    def male(self):
+        self.sex = "M"
+
+    def female(self):
+        self.sex = "F"
+
+    def vals(self):
+        self.roll = self.txtrollno.text()
+        self.name = self.txtname.text()
+        self.phone = self.txtphone.text()
+        self.gra = self.grade.currentText()
+        self.divis = self.division.currentText()
+        self.age = self.age_val.value()
+        self.doj = date.today()
+        self.email = self.txtemail.text()
+        self.values = [self.roll, self.name, self.phone,self.sex,
+                       self.gra, self.divis, self.age, self.doj, self.email]
+
+    def show(self):
+        self.vals()
+        for i in range(len(self.values)):
+            if self.values[i]!="" and self.values[i]!="+971":
+                self.searchval=self.values[i]
+                break
+        
 
     def setupUi(self, Admission_Menu):
+        self.mydb = mysql.connector.connect(
+            host="localhost", user="root", password="logon@123", database="school_management_system")
+        self.mycursor=self.mydb.cursor()
         Admission_Menu.setObjectName("Admission_Menu")
         Admission_Menu.resize(999, 578)
         Admission_Menu.setStyleSheet("background-color: rgb(8, 8, 8);\n"
@@ -63,6 +93,7 @@ class Ui_Admission_Menu(object):
                                      "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
                                      "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}")
         self.btnModify.setObjectName("btnModify")
+        self.btnModify.clicked.connect(self.vals)
         self.btDelete = QtWidgets.QToolButton(self.centralwidget)
         self.btDelete.setGeometry(QtCore.QRect(190, 500, 71, 21))
         font = QtGui.QFont()
@@ -182,6 +213,7 @@ class Ui_Admission_Menu(object):
         self.maleradio.setStyleSheet("color: white;\n"
                                      "BACKGROUND: ")
         self.maleradio.setObjectName("maleradio")
+        self.maleradio.toggled.connect(self.male)
         self.femaleradio = QtWidgets.QRadioButton(self.frame_2)
         self.femaleradio.setGeometry(QtCore.QRect(90, 10, 81, 20))
         font = QtGui.QFont()
@@ -189,6 +221,7 @@ class Ui_Admission_Menu(object):
         self.femaleradio.setFont(font)
         self.femaleradio.setStyleSheet("color: white;")
         self.femaleradio.setObjectName("femaleradio")
+        self.femaleradio.toggled.connect(self.female)
         self.label_6 = QtWidgets.QLabel(self.frame)
         self.label_6.setGeometry(QtCore.QRect(20, 230, 61, 31))
         font = QtGui.QFont()
@@ -384,6 +417,7 @@ class Ui_Admission_Menu(object):
                                    "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
                                    "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}")
         self.btnShow.setObjectName("btnShow")
+        self.btnShow.clicked.connect(self.show)
         self.table_adm.raise_()
         self.btnModify.raise_()
         self.btDelete.raise_()
