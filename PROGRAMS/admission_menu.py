@@ -32,12 +32,24 @@ class Ui_Admission_Menu(object):
         self.values = [self.roll, self.name, self.phone,self.sex,
                        self.gra, self.divis, self.age, self.doj, self.email]
 
+    def fetchingcolumns(self):
+        self.mycursor.execute("show columns from students")
+        res=self.mycursor.fetchall()
+        self.columns=[]
+        for i in res:
+            self.columns.append(i[0])
+
     def show(self):
         self.vals()
         for i in range(len(self.values)):
             if self.values[i]!="" and self.values[i]!="+971":
                 self.searchval=self.values[i]
                 break
+        self.fetchingcolumns()
+        
+
+
+        
         
 
     def setupUi(self, Admission_Menu):
