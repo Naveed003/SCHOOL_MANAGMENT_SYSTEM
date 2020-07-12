@@ -14,14 +14,14 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Admission_Menu(object):
     def setupUi(self, Admission_Menu):
         Admission_Menu.setObjectName("Admission_Menu")
-        Admission_Menu.resize(999, 578)
+        Admission_Menu.resize(1021, 578)
         Admission_Menu.setStyleSheet("background-color: rgb(8, 8, 8);\n"
                                      "font-family: Times New Roman;\n"
                                      "")
         self.centralwidget = QtWidgets.QWidget(Admission_Menu)
         self.centralwidget.setObjectName("centralwidget")
         self.table_adm = QtWidgets.QTableWidget(self.centralwidget)
-        self.table_adm.setGeometry(QtCore.QRect(380, 160, 611, 331))
+        self.table_adm.setGeometry(QtCore.QRect(380, 160, 621, 331))
         self.table_adm.setStyleSheet("COLOR: WHITE;\n"
                                      "border: 1px solid white;")
         self.table_adm.setObjectName("table_adm")

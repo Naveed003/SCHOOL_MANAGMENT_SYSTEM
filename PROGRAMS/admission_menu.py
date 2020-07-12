@@ -44,22 +44,25 @@ class Ui_Admission_Menu(object):
         self.columns = []
         for i in res:
             self.columns.append(i[0])
-
     def show(self):
         self.vals()
         for i in range(len(self.values)):
-            
             if i == 1 and self.values[i] != '':
                 self.searchval = [self.values[i]]
                 break
-
-            if i == 4:
+            elif i == 7 and self.values[i] != "":
+                
+                self.searchval=[self.values[i]]
+                break
+            elif i == 4:
                 if self.values[i] != "" and self.values[i+1] != "":
+            
                     self.searchval = [self.values[i], self.values[i+1]]
                     break
 
-            if self.values[i] != "" and self.values[i] != "+971":
+            elif self.values[i] != "" and self.values[i] != "+971" and self.values[7] == "":
                 self.searchval = [self.values[i]]
+          
                 break
 
         if i == 1:
@@ -83,7 +86,6 @@ class Ui_Admission_Menu(object):
                     res = self.mycursor.fetchall()
                     respone = []
                     strr = ''
-                
 
                     for i in range(len(res)):
                         response = []
@@ -172,20 +174,26 @@ class Ui_Admission_Menu(object):
                 self.ShowMessageBox_(
                     "STUDENT NOT FOUND", "STUDENT WITH THE ENTERED PARAMETERS COULD NOT BE FOUND")
                 return
+
+    def Add(self):
+        self.vals()
+        if "" in self.values:
+            pass
+
     def setupUi(self, Admission_Menu):
         self.sex = ""
         self.mydb = mysql.connector.connect(
             host="localhost", user="root", password="logon@123", database="school_management_system")
         self.mycursor = self.mydb.cursor()
         Admission_Menu.setObjectName("Admission_Menu")
-        Admission_Menu.resize(999, 578)
+        Admission_Menu.resize(1021, 578)
         Admission_Menu.setStyleSheet("background-color: rgb(8, 8, 8);\n"
                                      "font-family: Times New Roman;\n"
                                      "")
         self.centralwidget = QtWidgets.QWidget(Admission_Menu)
         self.centralwidget.setObjectName("centralwidget")
         self.table_adm = QtWidgets.QTableWidget(self.centralwidget)
-        self.table_adm.setGeometry(QtCore.QRect(380, 160, 611, 331))
+        self.table_adm.setGeometry(QtCore.QRect(380, 160, 621, 331))
         self.table_adm.setStyleSheet("COLOR: WHITE;\n"
                                      "border: 1px solid white;")
         self.table_adm.setObjectName("table_adm")
@@ -226,7 +234,6 @@ class Ui_Admission_Menu(object):
                                      "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
                                      "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}")
         self.btnModify.setObjectName("btnModify")
-        self.btnModify.clicked.connect(self.vals)
         self.btDelete = QtWidgets.QToolButton(self.centralwidget)
         self.btDelete.setGeometry(QtCore.QRect(190, 500, 71, 21))
         font = QtGui.QFont()
@@ -515,6 +522,7 @@ class Ui_Admission_Menu(object):
                                   "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
                                   "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}")
         self.btnAdd.setObjectName("btnAdd")
+        self.btnAdd.clicked.connect(self.Add)
         self.btnShowAll = QtWidgets.QToolButton(self.centralwidget)
         self.btnShowAll.setGeometry(QtCore.QRect(820, 500, 71, 22))
         self.btnShowAll.setStyleSheet("QToolButton { \n"
@@ -573,7 +581,7 @@ class Ui_Admission_Menu(object):
     def retranslateUi(self, Admission_Menu):
         _translate = QtCore.QCoreApplication.translate
         Admission_Menu.setWindowTitle(
-            _translate("Admission_Menu", "ADMISSION MENU"))
+            _translate("Admission_Menu", "MainWindow"))
         item = self.table_adm.horizontalHeaderItem(0)
         item.setText(_translate("Admission_Menu", "ROLL NO"))
         item = self.table_adm.horizontalHeaderItem(1)

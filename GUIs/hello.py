@@ -19,7 +19,7 @@ files = [
 cmd = "pyuic5 -x "
 
 for i in files:
-    if i=="student_data" or i=="admission_menu": 
+    if i=="admission_menu": 
         i=i.upper()
         temp = cmd +"GUIs/"+ i + ".ui -o  temp/" + i + ".py"
         print(temp)
