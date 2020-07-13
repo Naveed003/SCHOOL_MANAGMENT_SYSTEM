@@ -44,6 +44,13 @@ class Ui_Admission_Menu(object):
         self.columns = []
         for i in res:
             self.columns.append(i[0])
+    def cleartxt(self):
+        self.txtname.clear()
+        self.txtphone.setText("+971")
+        self.txtemail.clear()
+        self.txtrollno.clear()
+        self.age_val.clear()
+
     def show(self):
         self.vals()
         for i in range(len(self.values)):
@@ -51,18 +58,18 @@ class Ui_Admission_Menu(object):
                 self.searchval = [self.values[i]]
                 break
             elif i == 7 and self.values[i] != "":
-                
-                self.searchval=[self.values[i]]
+
+                self.searchval = [self.values[i]]
                 break
             elif i == 4:
                 if self.values[i] != "" and self.values[i+1] != "":
-            
+
                     self.searchval = [self.values[i], self.values[i+1]]
                     break
 
             elif self.values[i] != "" and self.values[i] != "+971" and self.values[7] == "":
                 self.searchval = [self.values[i]]
-          
+
                 break
 
         if i == 1:
@@ -178,7 +185,73 @@ class Ui_Admission_Menu(object):
     def Add(self):
         self.vals()
         if "" in self.values:
-            pass
+            self.ShowMessageBox_("FAILED",'ENTER ALL VALUES')
+            return
+        elif len(str(self.values[0]))<5:
+            self.ShowMessageBox_("FAILED","ENTER A ROLL NUMBER WITH ATLEAST 5 DIGIT ROLL")
+            return
+        elif len(str(self.values[2][4:]))!=9 or self.values[2][4:].isnumeric()==False:
+            self.ShowMessageBox_("FAILED","EMTER A VALID PHONE NUMBER")
+            return
+        elif "@" not in self.values[7]:
+            self.ShowMessageBox_("FAILED",'ENTER A VALID EMAIL ADDRESS')
+        
+        
+
+        self.mycursor.execute("select ROLL_no from students;")
+        res = self.mycursor.fetchall()
+        templist = []
+        if res != []:
+            for i in res:
+                for j in i:
+                    templist.append(j)
+            if self.values[0] in templist:
+                self.ShowMessageBox_(
+                    "FAILED", "STUDENT WITH THE ENTERED ROLL NUMBER ALDREADY EXISTS")
+                return
+            query = "insert into students(ROLL_NO,NAME,PHONE_NO,SEX,GRADE,DIVISION,AGE,EMAIL_ID,doj) values({},'{}','{}','{}',{},'{}',{},'{}','{}')".format(self.values[0], self.values[1], self.values[2], self.values[3], self.values[4], self.values[5], self.values[6], self.values[7], self.values[8]
+                                                                                                                                                            )
+            self.mycursor.execute(query)
+            self.mydb.commit()
+        else:
+            query = "insert into students(ROLL_NO,NAME,PHONE_NO,SEX,GRADE,DIVISION,AGE,EMAIL_ID,doj) values({},'{}','{}','{}',{},'{}',{},'{}','{}')".format(self.values[0], self.values[1], self.values[2], self.values[3], self.values[4], self.values[5], self.values[6], self.values[7], self.values[8]
+                                                                                                                                                            )
+            self.mycursor.execute(query)
+            self.mydb.commit()
+        query = "select ROLL_NO,NAME,AGE,SEX,GRADE,DIVISION,EMAIL_ID from students where roll_no='{}'".format(
+            self.values[0])
+        self.mycursor.execute(query)
+        res=self.mycursor.fetchall()
+        response=[]
+        strr=""
+        mainlist=[]
+        for i in range(len(res)):
+            for j in range(len(res[i])):
+                if j != 4 and j != 5:
+                    response.append(res[i][j])
+                elif j == 4 and j+1 == 5:
+                    strr = str(res[i][j])+"-"+str(res[i][j+1])
+                    response.append(strr)
+            mainlist.append(response)
+            response = []
+        message="added student with roll number {} and name {} to school databse".format(self.values[0],self.values[1])
+        self.ShowMessageBox("SUCCESFULL",message)
+        self.table_adm.setRowCount(0)
+        for i in range(len(res)):
+            rowPosition = self.table_adm.rowCount()
+            self.table_adm.insertRow(rowPosition)
+            for j in range(len(mainlist[i])):
+                numcols = self.table_adm.columnCount()
+                numrows = self.table_adm.rowCount()
+                self.table_adm.setRowCount(numrows)
+                self.table_adm.setColumnCount(numcols)
+                self.table_adm.setItem(
+                    i, j, QtWidgets.QTableWidgetItem(str(mainlist[i][j])))
+        
+        self.cleartxt()
+
+        
+                
 
     def setupUi(self, Admission_Menu):
         self.sex = ""
@@ -211,16 +284,16 @@ class Ui_Admission_Menu(object):
         self.table_adm.setHorizontalHeaderItem(4, item)
         item = QtWidgets.QTableWidgetItem()
         self.table_adm.setHorizontalHeaderItem(5, item)
-        self.btnModify = QtWidgets.QToolButton(self.centralwidget)
-        self.btnModify.setGeometry(QtCore.QRect(271, 500, 91, 21))
+        self.Clear = QtWidgets.QToolButton(self.centralwidget)
+        self.Clear.setGeometry(QtCore.QRect(271, 500, 91, 21))
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(-1)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
-        self.btnModify.setFont(font)
-        self.btnModify.setStyleSheet("QToolButton { \n"
+        self.Clear.setFont(font)
+        self.Clear.setStyleSheet("QToolButton { \n"
                                      "    background-color: #33ff39;\n"
                                      "    border: 2px;\n"
                                      "    border-radius: 8px;\n"
@@ -233,7 +306,7 @@ class Ui_Admission_Menu(object):
                                      "QToolButton:pressed {\n"
                                      "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
                                      "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}")
-        self.btnModify.setObjectName("btnModify")
+        self.Clear.setObjectName("btnModify")
         self.btDelete = QtWidgets.QToolButton(self.centralwidget)
         self.btDelete.setGeometry(QtCore.QRect(190, 500, 71, 21))
         font = QtGui.QFont()
@@ -564,7 +637,7 @@ class Ui_Admission_Menu(object):
         self.btnShow.setObjectName("btnShow")
         self.btnShow.clicked.connect(self.show)
         self.table_adm.raise_()
-        self.btnModify.raise_()
+        self.Clear.raise_()
         self.btDelete.raise_()
         self.label_7.raise_()
         self.frame.raise_()
@@ -594,7 +667,7 @@ class Ui_Admission_Menu(object):
         item.setText(_translate("Admission_Menu", "CLASS"))
         item = self.table_adm.horizontalHeaderItem(5)
         item.setText(_translate("Admission_Menu", "EMAIL ID"))
-        self.btnModify.setText(_translate("Admission_Menu", "MODIFY"))
+        self.Clear.setText(_translate("Admission_Menu", "CLEAR"))
         self.btDelete.setText(_translate("Admission_Menu", "DELETE"))
         self.label_9.setText(_translate("Admission_Menu", "STUDENT DETAILS"))
         self.label_7.setText(_translate(
