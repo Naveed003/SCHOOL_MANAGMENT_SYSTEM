@@ -284,16 +284,16 @@ class Ui_Admission_Menu(object):
         self.table_adm.setHorizontalHeaderItem(4, item)
         item = QtWidgets.QTableWidgetItem()
         self.table_adm.setHorizontalHeaderItem(5, item)
-        self.Clear = QtWidgets.QToolButton(self.centralwidget)
-        self.Clear.setGeometry(QtCore.QRect(271, 500, 91, 21))
+        self.btn_clear = QtWidgets.QToolButton(self.centralwidget)
+        self.btn_clear.setGeometry(QtCore.QRect(271, 500, 91, 21))
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(-1)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
-        self.Clear.setFont(font)
-        self.Clear.setStyleSheet("QToolButton { \n"
+        self.btn_clear.setFont(font)
+        self.btn_clear.setStyleSheet("QToolButton { \n"
                                      "    background-color: #33ff39;\n"
                                      "    border: 2px;\n"
                                      "    border-radius: 8px;\n"
@@ -306,7 +306,8 @@ class Ui_Admission_Menu(object):
                                      "QToolButton:pressed {\n"
                                      "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
                                      "                                      stop: 0 #dadbde, stop: 1 #f6f7fa);}")
-        self.Clear.setObjectName("btnModify")
+        self.btn_clear.setObjectName("btnModify")
+        self.btn_clear.clicked.connect(self.cleartxt)
         self.btDelete = QtWidgets.QToolButton(self.centralwidget)
         self.btDelete.setGeometry(QtCore.QRect(190, 500, 71, 21))
         font = QtGui.QFont()
@@ -637,7 +638,7 @@ class Ui_Admission_Menu(object):
         self.btnShow.setObjectName("btnShow")
         self.btnShow.clicked.connect(self.show)
         self.table_adm.raise_()
-        self.Clear.raise_()
+        self.btn_clear.raise_()
         self.btDelete.raise_()
         self.label_7.raise_()
         self.frame.raise_()
@@ -667,7 +668,7 @@ class Ui_Admission_Menu(object):
         item.setText(_translate("Admission_Menu", "CLASS"))
         item = self.table_adm.horizontalHeaderItem(5)
         item.setText(_translate("Admission_Menu", "EMAIL ID"))
-        self.Clear.setText(_translate("Admission_Menu", "CLEAR"))
+        self.btn_clear.setText(_translate("Admission_Menu", "CLEAR"))
         self.btDelete.setText(_translate("Admission_Menu", "DELETE"))
         self.label_9.setText(_translate("Admission_Menu", "STUDENT DETAILS"))
         self.label_7.setText(_translate(
